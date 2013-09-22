@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book market</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slyder.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body >
+<div id="wrapper">
+    <header>
+        <div id="head" class="align_container">
+            <img src="img/logo.png" alt="Logo" class="vert_align"/>
+            <p class="vert_align">EN <span>&#9662</span></p>
+            <div class="notifications vert_align" style="display: none">Notifications</div>
+            <div class="favorites vert_align" style="display: none">Favorites</div>
+            <div id="login_link">
+                <span><a href="#">Log in</a> or </span>
+                <div class="user vert_align" style="display: none">Tom 68</div>
+                <div id="add_product_small" class="button red">
+                    <span>Add Product</span>
+                </div>
+                <div class="tip" style="display: none">
+                    <input type="text" placeholder="Username:"/>
+                    <input type="text" placeholder="Password:"/>
+                    <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <div id="login">
+                        <div id="log_btn" class="button blue"><p>Login</p></div>
+                        <div id="reg"><a href="#">Registration</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="after_header" class="align_container">
+        <div class="align_container">
+            <p>Total active ads: 4 451 117 <span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
+            <label for="product_search">Find</label>
+            <input type="text" id="product_search"/>
+            <label for="location_search">in</label>
+            <input type="text" id="location_search"placeholder="My campus"/>
+            <!--<input type="text" id="location_icon"/>-->
+            <div id="location_icon"></div>
+            <div class="loc_places" style="display: none">
+                <ul class="countries">
+                    <li>Denmark</li>
+                    <li>Norway</li>
+                    <li>Switzerland</li>
+                    <li>United Kingdom</li>
+                    <li class="active">Everywhere</li>
+                </ul>
+                <ul class="regions">
+                    <li>Region Kiev</li>
+                    <li>Region Kiev</li>
+                    <li>Region Kiev</li>
+                    <li>Region Kiev</li>
+                    <li>Region Kiev</li>
+                </ul>
+                <ul class="cityNav" style="display: none">
+                    <li class="region">Everywhere</li>
+                </ul>
+                <ul class="towns" style="display: none">
+                    <li class="town_list">
+                        <ul>
+                            <li>
+                                <input type="checkbox" hidden id="1" />
+                                <label for="1">1Region Kiev</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" hidden id="2" />
+                                <label for="2">2Region Kiev</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" hidden id="3" />
+                                <label for="3">3Region Kiev</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" hidden id="4" />
+                                <label for="4">4Region Kiev</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" hidden id="5" />
+                                <label for="5">5Region Kiev</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" hidden id="6" />
+                                <label for="6">6Region Kiev</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="search_button" class="button blue"><img src="img/search.png" alt="search" class="vert_align"/></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div id="container" class="align_container">
+        <h1>Search inside the biggest student community</h1>
+        <div id="categories">
+            <div id="book" class="blocks">
+                <p>Books</p>
+            </div>
+            <div id="mobile" class="blocks equals">
+                <p>Mobile</p>
+            </div>
+            <div id="tablets" class="blocks equals">
+                <p>Tablets</p>
+            </div>
+            <div id="laptops" class="blocks equals">
+                <p>Laptops</p>
+            </div>
+            <div id="camera" class="blocks equals">
+                <p>Camera</p>
+            </div>
+            <div id="bicycle" class="blocks equals">
+                <p>Bicycles</p>
+            </div>
+            <div id="tv" class="blocks equals">
+                <p>TV</p>
+            </div>
+        </div>
+        <div id="product_way">
+            <div id="button" class="button">
+                <div id="plus"><span>+</span></div>
+                <p>Add product</p>
+            </div>
+        </div>
+            <ul id="slyder">
+                <li></li>
+                <li id="iphone"><a><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
+                <li><a><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li><a><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li style="padding-top: 11px"><a><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
+                <li style="padding-top: 12px"><a><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li></li>
+            </ul>
+        <div id="university_slyder">
+            <h2>Find offers in your university</h2>
+            <ul id="un_slyder">
+                <li></li>
+                <li id="howard"><a></a></li>
+                <li id="bristol"><a></a></li>
+                <li id="aston"><a></a></li>
+                <li id="metropolitan"><a></a></li>
+                <li id="whistel"><a></a></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="line"></div>
+        <div class="align_container">
+            <ul id="navigation">
+                <li><a href="#">Contact Us</a></li>
+                <li>|</li>
+                <li><a href="#">Blog</a></li>
+                <li>|</li>
+                <li id="app"><a href="#">App Site</a></li>
+                <li>Follow us</li>
+                <li><a href="#"><img src="img/google.png" alt="google"/></a></li>
+                <li><a href="#"><img src="img/facebook.png" alt="facebook"/></a></li>
+                <li><a href="#"><img src="img/twitter.png" alt="twitter"/></a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
