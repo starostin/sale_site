@@ -621,3 +621,47 @@ input[type="checkbox"]:checked + label:before {
     float: right;
     border-left: 1px dashed black;
 }
+.options{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed black;
+    text-align: left;
+}
+.options li{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.options li:first-child{
+    color: #838485;
+    margin-left: 24px;
+}
+.options li:first-child span{
+    font-weight: bold;
+}
+.options .genre{
+    font-size: 14px;
+    color: #468bc1;
+    margin-left: 170px;
+}
+.options .sort{
+    color: #838485;
+    margin-left: 174px;
+}
+.options .sort select{
+    border: 1px solid #a3c6d8;
+    color: red;
+    background: white;
+    outline: none;
+    min-width: 130px;
+    height: 28px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.options .sel{
+    margin-right: 10px;
+}
+.options .sel a{
+    color: #70a3d8;
+}
+
