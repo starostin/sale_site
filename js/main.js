@@ -63,6 +63,7 @@ var homeEvents = {
                 allRegions.show();
                 $('.countries li').unbind('click');
                 $('.regions li').unbind('click');
+                $('.town_list input').unbind('change');
             }
 
         })
@@ -74,7 +75,7 @@ var homeEvents = {
             cityNav = $('.cityNav'),
             towns = $('.towns');
         $('.countries li').on('click', function () {
-            self.removeActiveClass();
+            self.removeActiveClass('countries', 'active');
             $(this).addClass('active');
             self.addRegion();
             self.clearTown();
@@ -98,10 +99,10 @@ var homeEvents = {
         })
     },
 
-    removeActiveClass: function () {
-        Array.prototype.forEach.call($('.countries li'), function (e) {
-            if ($(e).hasClass('active')) {
-                $(e).removeClass('active')
+    removeActiveClass: function (elClass, className) {
+        Array.prototype.forEach.call($('.' + elClass + ' li'), function (e) {
+            if ($(e).hasClass(className)) {
+                $(e).removeClass(className)
             }
         })
     },
@@ -198,6 +199,33 @@ var homeEvents = {
             $( "#from" ).text( "$ " + $( "#price_range" ).slider( "values", 0 ));
             $('#to').text("$ " + $( "#price_range" ).slider( "values", 1 ) );
         });
+    },
+    seeMore: function(className, count){
+        var button = $('.' + className),
+            invisible_elements = $('ul.all li');
+        if(invisible_elements.length > count ){
+            for(var i=count; i<invisible_elements.length; i++){
+                if($(invisible_elements[i]).attr('class') !== className){
+                    $(invisible_elements[i]).css('display', 'none');
+                }
+            }
+        }
+        button.on('click', function(){
+            for(var i=0; i<invisible_elements.length; i++){
+                invisible_elements[i].removeAttribute('style')
+            }
+            $(this).css('display', 'none');
+        })
+    },
+    selectDropdown: function(){
+        var self = this,
+            dropdowns = $('.categories_dropdowns li')
+        for(var i=0; i<=dropdowns.length; i++){
+            $(dropdowns[i]).on('click', function(){
+                self.removeActiveClass('categories_dropdowns', 'active_ctegory')
+                $(this).toggleClass('active_ctegory')
+            })
+        }
     }
 };
 $(document).ready(function(){
@@ -205,4 +233,6 @@ $(document).ready(function(){
     homeEvents.location();
     homeEvents.locationPopup();
     homeEvents.rangeSlyder();
+    homeEvents.seeMore('see_more', 12);
+    homeEvents.selectDropdown();
 });

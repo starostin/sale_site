@@ -624,6 +624,7 @@ input[type="checkbox"]:checked + label:before {
     background-color: #d7e3e6;
     margin-right: 8px;
 }
+
 .categories_dropdowns li:first-child{
     margin-left: 8px;
 }
@@ -632,6 +633,10 @@ input[type="checkbox"]:checked + label:before {
     width: 30px;
     float: right;
     border-left: 1px dashed #9cc7d0;
+}
+.categories_dropdowns .active_ctegory{
+    background-color: #3cb1c9;
+    color: white;
 }
 .options{
     border-bottom: 2px dashed #e1e1e1;
