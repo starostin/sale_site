@@ -182,10 +182,27 @@ var homeEvents = {
             $('ul.towns').append('<li class="town_list"><ul>' + cutStr + '</ul></li>');
             self.makeTownList(maxListLength)
         }
+    },
+    rangeSlyder: function(){
+        $(function() {
+            $( "#price_range" ).slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 0, 500 ],
+                slide: function( event, ui ) {
+                    $( "#from" ).text( "$ " + ui.values[ 0 ]);
+                    $( "#to" ).text( "$ " + ui.values[ 1 ] );
+                }
+            });
+            $( "#from" ).text( "$ " + $( "#price_range" ).slider( "values", 0 ));
+            $('#to').text("$ " + $( "#price_range" ).slider( "values", 1 ) );
+        });
     }
 };
 $(document).ready(function(){
     homeEvents.loginPopup();
     homeEvents.location();
     homeEvents.locationPopup();
+    homeEvents.rangeSlyder();
 });

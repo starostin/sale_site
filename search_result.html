@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/default.css"/>
     <link rel="stylesheet" href="css/jcf.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jcf.js"></script>
     <script src="js/jcf.select.js"></script>
     <script src="js/slyder.js"></script>
@@ -103,13 +105,13 @@
     <div class="line"></div>
     <div id="container" class="align_container">
         <ul class="categories_dropdowns">
-            <li>Books<div class="small_arrow">&#8595;</div></li>
-            <li>Mobile<div class="small_arrow">&#8595;</div></li>
-            <li>Camera<div class="small_arrow">&#8595;</div></li>
-            <li>Laptops<div class="small_arrow">&#8595;</div></li>
-            <li>Tablet<div class="small_arrow">&#8595;</div></li>
-            <li>Bicycle<div class="small_arrow">&#8595;</div></li>
-            <li>TV<div class="small_arrow">&#8595;</div></li>
+            <li>Books<div class="small_arrow">˅</div></li>
+            <li>Mobile<div class="small_arrow">˅</div></li>
+            <li>Camera<div class="small_arrow">˅</div></li>
+            <li>Laptops<div class="small_arrow">˅</div></li>
+            <li>Tablet<div class="small_arrow">˅</div></li>
+            <li>Bicycle<div class="small_arrow">˅</div></li>
+            <li>TV<div class="small_arrow">˅</div></li>
         </ul>
         <ul class="options">
             <li>Total: <span>28545</span></li>
@@ -132,37 +134,46 @@
         </ul>
         <div class="common">
             <div class="settings">
-                Price range
-                <span>from 0</span>
-                <span>to 5000</span>
-                <input type="range">
-                <input type="checkbox" id="used"/>
-                <label for="used">
-                <input type="checkbox" id="shipping"/>
-                <label for="shipping"></label></label>
+                <p>
+                    <span class="price_label">Price Range:</span>
+                <div id="amount">
+                    <span>from: <span id="from" class="price"></span></span>
+                    <span>to: <span id="to" class="price"></span></span>
+                </div>
+                </p>
+                <div id="price_range"></div>
+                <div class="set_check" style="margin-top: 40px">
+                    <input type="checkbox" id="used"/>
+                    <label for="used">Used</label>
+                </div>
+                <div class="set_check">
+                    <input type="checkbox" id="shipping"/>
+                    <label for="shipping">Shipping</label>
+                </div>
             </div>
-            <ul class="goods">
-                <li><a href="#"><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Why We Fail Learning from Experience Design...</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>The User Experience Team of One Leah Buley</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Design For CareInnovating Healthcare Experience</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Why We Fail Learning from Experience Design...</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>The User Experience Team of One Leah Buley</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Design For CareInnovating Healthcare Experience</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Why We Fail Learning from Experience Design...</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>The User Experience Team of One Leah Buley</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Design For CareInnovating Healthcare Experience</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">200</p></a></li>
-                <li class="see_more">See More 24 items</li>
-                <li><a href="#"><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Why We Fail Learning from Experience Design...</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>The User Experience Team of One Leah Buley</p><p class="price">200</p></a></li>
-                <li><a href="#"><p>Design For CareInnovating Healthcare Experience</p><p class="price">200</p></a></li>
+            <ul class="goods all">
+                <li><a href="#"><img src="img/brown.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/biology.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition 1st Edition 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/3rd.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/4.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/5.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/6.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/7.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/8.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/9.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/10.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/11.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/12.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/13.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/14.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/15.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="#"><img src="img/books/16.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="#"><img src="img/books/4.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="#"><img src="img/books/5.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="#"><img src="img/books/6.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="#"><img src="img/books/7.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li class="see_more"><span class="see">See More</span><span class="item_count"> 24 items</span></li>
+
             </ul>
         </div>
         <ul class="options">
@@ -175,7 +186,7 @@
             <li class="sel"><a href="#">GPB</a></li>
         </ul>
         <h2 class="slyder_label">Customers also buy</h2>
-        <ul class="slyder goods">
+        <ul class="slyder goods bottom">
             <li></li>
             <li id="iphone"><a><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
             <li><a><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
