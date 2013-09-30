@@ -107,7 +107,7 @@ var homeEvents = {
     },
 
     removeActiveClass: function (parent, elClass, className, exceptEl) {
-        Array.prototype.forEach.call(parent.find('.' + elClass + ' li'), function (e) {
+        Array.prototype.forEach.call(parent.find('.' + elClass + '>li'), function (e) {
             if ($(e).hasClass(className) && e !== exceptEl) {
                 $(e).removeClass(className)
             }
@@ -227,7 +227,7 @@ var homeEvents = {
     selectDropdown: function(){
         var self = this,
             dropdowns = $('.categories_dropdowns>li'),
-            dropdownsParent = $('.categories_dropdowns');
+            dropdownsParent = $('#container');
         for(var i=0; i<=dropdowns.length; i++){
             $(dropdowns[i]).on('click', function(e){
                 $(this).toggleClass('active_ctegory');
