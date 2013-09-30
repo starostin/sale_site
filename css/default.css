@@ -485,9 +485,9 @@ input[type="checkbox"]:checked + label:before {
 #reg{
     line-height:36px
 }
-/*-----------------------------------select countries------------------------------------------*/
+/*-----------------------------------select top_select------------------------------------------*/
 
-.loc_places {
+.modal_popup {
     line-height: normal;
     text-align:left;
     margin-top: 20px;
@@ -504,7 +504,7 @@ input[type="checkbox"]:checked + label:before {
     right: 40px;
 }
 /* arrows - :before and :after */
-.loc_places:before {
+.modal_popup:before {
     position: absolute;
     top: -16px;
     left: 794px;
@@ -515,7 +515,7 @@ input[type="checkbox"]:checked + label:before {
     border-bottom-color: #37968d;
     content:'';
 }
-.loc_places:after {
+.modal_popup:after {
     position: absolute;
     top: -14px;
     left: 796px;
@@ -525,15 +525,15 @@ input[type="checkbox"]:checked + label:before {
     border-left: 14px solid transparent;
     content:'';
 }
-.loc_places label{
+.modal_popup label{
     font: 16px sans-serif;
     color: black;
 }
-.loc_places ul.countries, .loc_places ul.cityNav {
+.modal_popup ul.top_select, .modal_popup ul.modal_navigation {
     padding-left: 10px;
     padding-right: 10px;
 }
-.loc_places ul.countries {
+.modal_popup ul.top_select {
     margin: auto;
     width: 940;
     height: 20px;
@@ -541,7 +541,7 @@ input[type="checkbox"]:checked + label:before {
     border-bottom: 1px solid #69c3ba;
     padding-bottom: 16px;
 }
-.countries li {
+.top_select li {
     display: inline-block;
     margin-right: 15px;
     padding: 5px;
@@ -549,31 +549,31 @@ input[type="checkbox"]:checked + label:before {
     font-size: 18px;
     color: #174a60;
 }
-.countries li.active {
+.top_select li.active {
     background: #70a3b8;
     color: white;
 }
-.countries li:last-child {
+.top_select li:last-child {
     float: right;
     margin-right: 0;
 }
-.loc_places ul.cityNav {
+.modal_popup ul.modal_navigation {
     padding: 10px 10px 10px 15px;
     border-bottom: 1px solid #69c3ba;
     margin-bottom: 15px;
 }
-.cityNav li {
+.modal_navigation li {
     display: inline-block;
     font: 12px sans-serif;
     color: #468bc1;
 }
-.cityNav li:after {
+.modal_navigation li:after {
     content:" / ";
 }
-.cityNav li:last-child:after {
+.modal_navigation li:last-child:after {
     content:"";
 }
-.town_list, .regions {
+.main_check_list, .main_list {
     height: 60%;
     float: left;
     margin-right: 30px;
@@ -581,29 +581,29 @@ input[type="checkbox"]:checked + label:before {
     border-left: 1px dashed black;
     padding-left: 5px;
 }
-.regions{
+.main_list{
     padding-right: 35px;
     border-right: 1px dashed #e1e1e1;
     border-left: none;
     height: 80%;
     margin-left: 10px;
 }
-.town_list:first-child, .regions:first-child{
+.main_check_list:first-child, .main_list:first-child{
     border-left: none;
     padding-left: 0;
 }
-.town_list li, .regions li{
+.main_check_list li, .main_list li{
     cursor: pointer;
     margin-top: 18px;
     color: #484747;
     font: 14px sans-serif;
 }
-.town_list label{
+.main_check_list label{
     cursor: pointer;
     color: #484747;
     font: 14px sans-serif;
 }
-.town_list li:first-child {
+.main_check_list li:first-child {
     margin-top: 0;
 }
 
@@ -615,7 +615,7 @@ input[type="checkbox"]:checked + label:before {
     font-size: 18px;
     color: #217485;
 }
-.categories_dropdowns li{
+.categories_dropdowns>li{
     display: inline-block;
     width: 126px;
     height: 34px;
@@ -623,9 +623,10 @@ input[type="checkbox"]:checked + label:before {
     vertical-align: middle;
     background-color: #d7e3e6;
     margin-right: 8px;
+    position: relative;
 }
 
-.categories_dropdowns li:first-child{
+.categories_dropdowns>li:first-child{
     margin-left: 8px;
 }
 .categories_dropdowns .small_arrow{

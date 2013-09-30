@@ -41,94 +41,101 @@ var homeEvents = {
             locInput.trigger('focus')
         })
     },
-    locationPopup: function(){
+    locationPopup: function(element, button){
         var self = this,
-            locInput = $('#location_search'),
-            locPlaces = $('.loc_places'),
-            locIcon = $('#location_icon'),
-            allRegions = $('.regions'),
-            cityNav = $('.cityNav'),
-            towns = $('.towns');;
-        locIcon.on('click', function(e){
-            if(!locPlaces.is(':visible')){
-                locPlaces.show();
-                self.selectCountry();
-                self.selectRegion();
+            button = $(button);
+            if(!element){
+                var modal_popup = button.siblings('.modal_popup');
             }else{
-                locPlaces.hide();
+                var modal_popup = $(element);
+            }
+        var main_list = modal_popup.find('.main_list'),
+            modal_navigation = modal_popup.find('.modal_navigation'),
+            main_check_list = modal_popup.find('.check_list');
+        console.log(modal_popup)
+        button.on('click', function(e){
+            if(!modal_popup.is(':visible')){
+                modal_popup.show();
+                self.selectCountry(modal_popup);
+                if(main_check_list.length){
+                    console.log(main_check_list);
+                    console.log('========')
+                    self.selectRegion();
+                }
+            }else{
+                modal_popup.hide();
                 self.addRegion();
                 self.clearTown();
-                towns.hide();
-                cityNav.hide();
-                allRegions.show();
-                $('.countries li').unbind('click');
-                $('.regions li').unbind('click');
-                $('.town_list input').unbind('change');
+                main_check_list.hide();
+                modal_navigation.hide();
+                main_list.show();
+                $('.top_select li').unbind('click');
+                main_list.find('li').unbind('click');
+                main_check_list.find('input').unbind('change');
             }
 
         })
     },
-    selectCountry: function(){
+    selectCountry: function(modal_popup){
         var self = this,
-            region = $('.regions li'),
-            allRegions = $('.regions'),
-            cityNav = $('.cityNav'),
-            towns = $('.towns');
-        $('.countries li').on('click', function () {
-            self.removeActiveClass('countries', 'active');
+            main_list = modal_popup.find('.main_list'),
+            modal_navigation = modal_popup.find('.modal_navigation'),
+            main_check_list = modal_popup.find('.check_list');
+        modal_popup.find('.top_select li').on('click', function () {
+            self.removeActiveClass(modal_popup, 'top_select', 'active');
             $(this).addClass('active');
             self.addRegion();
             self.clearTown();
-            towns.hide();
-            cityNav.hide();
-            allRegions.show();
-            $('.town_list input').unbind('change')
+            main_check_list.hide();
+            modal_navigation.hide();
+            main_list.show();
+            main_check_list.find('input').unbind('change')
         })
     },
     clearTown: function () {
         var self = this;
         self.townArr.length = 0;
-        $('.cityNav').find('li.town').remove();
+        $('.modal_navigation').find('li.nav_items').remove();
         self.uncheckTowns();
     },
     uncheckTowns: function () {
-        Array.prototype.forEach.call($('.town_list input'), function (e) {
+        Array.prototype.forEach.call($('.main_check_list input'), function (e) {
             if ($(e).is(':checked')) {
                 $(e).removeAttr('checked')
             }
         })
     },
 
-    removeActiveClass: function (elClass, className) {
-        Array.prototype.forEach.call($('.' + elClass + ' li'), function (e) {
-            if ($(e).hasClass(className)) {
+    removeActiveClass: function (parent, elClass, className, exceptEl) {
+        Array.prototype.forEach.call(parent.find('.' + elClass + ' li'), function (e) {
+            if ($(e).hasClass(className) && e !== exceptEl) {
                 $(e).removeClass(className)
             }
         })
     },
     activeCity: function () {
-        var region;
-        Array.prototype.forEach.call($('.countries li'), function (e) {
+        var nav_item;
+        Array.prototype.forEach.call($('.top_select li'), function (e) {
             if ($(e).hasClass('active')) {
-                region = $(e).text();
+                nav_item = $(e).text();
             }
-        })
-        return region;
+        });
+        return nav_item;
     },
     addRegion: function () {
         var self = this;
-        $('.cityNav').find('.region').text(self.activeCity())
+        $('.modal_navigation').find('.nav_items').text(self.activeCity())
     },
     selectRegion: function(){
         var self = this,
-            region = $('.regions li'),
-            allRegions = $('.regions'),
-            cityNav = $('.cityNav'),
-            towns = $('.towns');
-        region.on('click', function(){
-            allRegions.hide();
-            cityNav.show();
-            towns.show();
+            main_list_item = $('.main_list li'),
+            main_list = $('.main_list'),
+            modal_navigation = $('.modal_navigation'),
+            check_list = $('.check_list');
+        main_list_item.on('click', function(){
+            main_list.hide();
+            modal_navigation.show();
+            check_list.show();
             self.makeTownList(4);
             self.addTown();
         })
@@ -136,14 +143,14 @@ var homeEvents = {
     addTown: function () {
         var self = this,
             townStr = '';
-        $('.town_list input').on('change', function () {
+        $('.main_check_list input').on('change', function () {
             if ($(this).is(':checked')) {
                 self.townArr.push($(this).next().text());
                 townStr = self.townArr.toString();
-                if ($('.cityNav').find('li.town').length) {
-                    $('.cityNav').find('li.town').text(townStr);
+                if ($('.modal_navigation').find('li.nav_items').length) {
+                    $('.modal_navigation').find('li.nav_items').text(townStr);
                 } else {
-                    $('.cityNav').append('<li class="town">' + townStr + '</li>');
+                    $('.modal_navigation').append('<li class="nav_items">' + townStr + '</li>');
                 }
             } else if (self.townArr.length) {
                 var index = self.townArr.indexOf($(this).next().text());
@@ -151,9 +158,9 @@ var homeEvents = {
                     self.townArr.splice(index, 1);
                     townStr = self.townArr.toString();
                     if (self.townArr.length) {
-                        $('.cityNav').find('li.town').text(townStr);
+                        $('.modal_navigation').find('li.nav_items').text(townStr);
                     } else {
-                        $('.cityNav').find('li.town').remove()
+                        $('.modal_navigation').find('li.nav_items').remove()
                     }
                 }
             }
@@ -165,7 +172,7 @@ var homeEvents = {
             arrToInsert = [],
             insertStr = '',
             cutStr = '',
-            townList = $('.town_list'),
+            townList = $('.main_check_list'),
             length = townList.length,
             lastList = townList.eq(length - 1).find('li'),
             clone = lastList.clone();
@@ -180,7 +187,7 @@ var homeEvents = {
             for (var i = 0; i < arrToNextList.length; i++) {
                 cutStr += arrToNextList[i].outerHTML;
             }
-            $('ul.towns').append('<li class="town_list"><ul>' + cutStr + '</ul></li>');
+            $('ul.check_list').append('<li class="main_check_list"><ul>' + cutStr + '</ul></li>');
             self.makeTownList(maxListLength)
         }
     },
@@ -219,11 +226,12 @@ var homeEvents = {
     },
     selectDropdown: function(){
         var self = this,
-            dropdowns = $('.categories_dropdowns li')
+            dropdowns = $('.categories_dropdowns>li'),
+            dropdownsParent = $('.categories_dropdowns');
         for(var i=0; i<=dropdowns.length; i++){
-            $(dropdowns[i]).on('click', function(){
-                self.removeActiveClass('categories_dropdowns', 'active_ctegory')
-                $(this).toggleClass('active_ctegory')
+            $(dropdowns[i]).on('click', function(e){
+                $(this).toggleClass('active_ctegory');
+                self.removeActiveClass(dropdownsParent, 'categories_dropdowns', 'active_ctegory', e.currentTarget);
             })
         }
     }
@@ -231,7 +239,9 @@ var homeEvents = {
 $(document).ready(function(){
     homeEvents.loginPopup();
     homeEvents.location();
-    homeEvents.locationPopup();
+    homeEvents.locationPopup('#loc_popup', '#location_icon');
+    homeEvents.locationPopup(null, '#drop_book');
+    homeEvents.locationPopup(null, '#hot');
     homeEvents.rangeSlyder();
     homeEvents.seeMore('see_more', 12);
     homeEvents.selectDropdown();
