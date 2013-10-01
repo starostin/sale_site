@@ -47,6 +47,7 @@ var homeEvents = {
             button = $(button);
             if(!element){
                 var modal_popup = button.siblings('.modal_popup');
+                self.movePopupTriangle(modal_popup, button);
             }else{
                 var modal_popup = $(element);
             }
@@ -54,23 +55,28 @@ var homeEvents = {
             modal_navigation = modal_popup.find('.modal_navigation'),
             main_check_list = modal_popup.find('.check_list');
         button.on('click', function(e){
-            if(self.rememberedPopup.length){
-                console.log('=============================')
+            if(self.rememberedPopup.length &&  self.rememberedPopup[2] !== modal_popup){
                 self.hidePopup(self.rememberedPopup[0], self.rememberedPopup[1]);
             }
             if(!modal_popup.is(':visible')){
-                console.log('----------------------------')
+                if(button.hasClass('around_me')){
+                    button.closest('li').addClass('active_ctegory');
+                }
                 modal_popup.show();
                 self.selectCountry(modal_popup);
                 if(main_check_list.length){
                     self.selectRegion(modal_popup);
                 }
-                self.rememberedPopup = [element, button];
+                self.rememberedPopup = [element, button, modal_popup];
             }else{
                 self.hidePopup(element, button);
             }
 
         })
+    },
+    movePopupTriangle: function(modal_popup, button){
+        var before = button.parent().position().left + 56;
+        modal_popup.find('div.arrow-up').css('left', before);
     },
     hidePopup: function(element, button){
         var self = this,
@@ -85,6 +91,9 @@ var homeEvents = {
             modal_navigation = modal_popup.find('.modal_navigation'),
             main_check_list = modal_popup.find('.check_list');
 
+        if(button.hasClass('around_me')){
+            button.closest('li').removeClass('active_ctegory');
+        }
         modal_popup.hide();
         self.addRegion(modal_popup);
         self.clearTown(modal_popup);
@@ -242,26 +251,19 @@ var homeEvents = {
             }
             $(this).css('display', 'none');
         })
-    },
-    selectDropdown: function(){
-        var self = this,
-            dropdowns = $('.small_arrow'),
-            dropdownsParent = $('#container');
-        for(var i=0; i<=dropdowns.length; i++){
-            $(dropdowns[i]).on('click', function(e){
-                $(this).toggleClass('active_ctegory');
-                self.removeActiveClass(dropdownsParent, 'categories_dropdowns', 'active_ctegory', e.currentTarget);
-            })
-        }
     }
 };
 $(document).ready(function(){
     homeEvents.loginPopup();
     homeEvents.location();
     homeEvents.locationPopup('#loc_popup', '#location_icon');
-    homeEvents.locationPopup(null, '#drop_book');
-    homeEvents.locationPopup(null, '#hot');
+    homeEvents.locationPopup(null, '#drop_books');
+    homeEvents.locationPopup(null, '#drop_phones');
+    homeEvents.locationPopup(null, '#drop_cameras');
+    homeEvents.locationPopup(null, '#drop_laptops');
+    homeEvents.locationPopup(null, '#drop_tablets');
+    homeEvents.locationPopup(null, '#drop_bicycles');
+    homeEvents.locationPopup(null, '#drop_tvs');
     homeEvents.rangeSlyder();
     homeEvents.seeMore('see_more', 12);
-    homeEvents.selectDropdown();
 });

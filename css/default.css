@@ -504,26 +504,50 @@ input[type="checkbox"]:checked + label:before {
     right: 40px;
 }
 /* arrows - :before and :after */
-.modal_popup:before {
-    position: absolute;
-    top: -16px;
-    left: 794px;
-    display: inline-block;
-    border-right: 16px solid transparent;
-    border-bottom: 16px solid #efefef;
-    border-left: 16px solid transparent;
-    border-bottom-color: #37968d;
-    content:'';
-}
-.modal_popup:after {
-    position: absolute;
-    top: -14px;
+
+/*.modal_popup:before {*/
+    /*position: absolute;*/
+    /*top: -16px;*/
+    /*left: 794px;*/
+    /*display: inline-block;*/
+    /*border-right: 16px solid transparent;*/
+    /*border-bottom: 16px solid #efefef;*/
+    /*border-left: 16px solid transparent;*/
+    /*border-bottom-color: #37968d;*/
+    /*content:'';*/
+/*}*/
+/*.modal_popup:after {*/
+    /*position: absolute;*/
+    /*top: -14px;*/
+    /*left: 796px;*/
+    /*display: inline-block;*/
+    /*border-right: 14px solid transparent;*/
+    /*border-bottom: 14px solid #efefef;*/
+    /*border-left: 14px solid transparent;*/
+    /*content:'';*/
+/*}*/
+div.arrow-up {
+    top: -15px;
     left: 796px;
-    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #37968d;
+    font-size: 0;
+    line-height: 0;
+}
+div.arrow-up-inside{
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
     border-right: 14px solid transparent;
     border-bottom: 14px solid #efefef;
-    border-left: 14px solid transparent;
-    content:'';
+    font-size: 0;
+    line-height: 0;
+    margin-left: -14px;
+    padding-top: 3px;
 }
 .modal_popup label{
     font: 16px sans-serif;
@@ -540,6 +564,7 @@ input[type="checkbox"]:checked + label:before {
     margin-bottom:3px;
     border-bottom: 1px solid #69c3ba;
     padding-bottom: 16px;
+    /*position: relative;*/
 }
 .top_select li {
     display: inline-block;
@@ -614,6 +639,7 @@ input[type="checkbox"]:checked + label:before {
     padding-bottom: 6px;
     font-size: 18px;
     color: #217485;
+    position: relative;
 }
 .categories_dropdowns>li{
     display: inline-block;
@@ -623,7 +649,6 @@ input[type="checkbox"]:checked + label:before {
     vertical-align: middle;
     background-color: #d7e3e6;
     margin-right: 8px;
-    position: relative;
 }
 
 .categories_dropdowns>li:first-child{
@@ -755,4 +780,9 @@ input[type="checkbox"]:checked + label:before {
 .set_check label{
     color: #69746e;
     font-size: 16px;
+}
+.categories_dropdowns .modal_popup{
+    left: 18px;
+    top: 40px;
+    display: none;
 }
