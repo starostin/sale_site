@@ -7,6 +7,7 @@
  */
 var homeEvents = {
     townArr: [],
+    rememberedPopup: [],
     loginPopup: function(){
         $('#login_link>span').on('click', function(e){
             e.preventDefault();
@@ -52,29 +53,47 @@ var homeEvents = {
         var main_list = modal_popup.find('.main_list'),
             modal_navigation = modal_popup.find('.modal_navigation'),
             main_check_list = modal_popup.find('.check_list');
-        console.log(modal_popup)
         button.on('click', function(e){
+            if(self.rememberedPopup.length){
+                console.log('=============================')
+                self.hidePopup(self.rememberedPopup[0], self.rememberedPopup[1]);
+            }
             if(!modal_popup.is(':visible')){
+                console.log('----------------------------')
                 modal_popup.show();
                 self.selectCountry(modal_popup);
                 if(main_check_list.length){
-                    console.log(main_check_list);
-                    console.log('========')
-                    self.selectRegion();
+                    self.selectRegion(modal_popup);
                 }
+                self.rememberedPopup = [element, button];
             }else{
-                modal_popup.hide();
-                self.addRegion();
-                self.clearTown();
-                main_check_list.hide();
-                modal_navigation.hide();
-                main_list.show();
-                $('.top_select li').unbind('click');
-                main_list.find('li').unbind('click');
-                main_check_list.find('input').unbind('change');
+                self.hidePopup(element, button);
             }
 
         })
+    },
+    hidePopup: function(element, button){
+        var self = this,
+            button = $(button);
+        self.rememberedPopup = [];
+        if(!element){
+            var modal_popup = button.siblings('.modal_popup');
+        }else{
+            var modal_popup = $(element);
+        }
+        var main_list = modal_popup.find('.main_list'),
+            modal_navigation = modal_popup.find('.modal_navigation'),
+            main_check_list = modal_popup.find('.check_list');
+
+        modal_popup.hide();
+        self.addRegion(modal_popup);
+        self.clearTown(modal_popup);
+        main_check_list.hide();
+        modal_navigation.hide();
+        main_list.show();
+        modal_popup.find('.top_select li').unbind('click');
+        main_list.find('li').unbind('click');
+        main_check_list.find('input').unbind('change');
     },
     selectCountry: function(modal_popup){
         var self = this,
@@ -84,22 +103,22 @@ var homeEvents = {
         modal_popup.find('.top_select li').on('click', function () {
             self.removeActiveClass(modal_popup, 'top_select', 'active');
             $(this).addClass('active');
-            self.addRegion();
-            self.clearTown();
+            self.addRegion(modal_popup);
+            self.clearTown(modal_popup);
             main_check_list.hide();
             modal_navigation.hide();
             main_list.show();
             main_check_list.find('input').unbind('change')
         })
     },
-    clearTown: function () {
+    clearTown: function (modal_popup) {
         var self = this;
         self.townArr.length = 0;
-        $('.modal_navigation').find('li.nav_items').remove();
-        self.uncheckTowns();
+        modal_popup.find('.modal_navigation').find('li.nav_items').remove();
+        self.uncheckTowns(modal_popup);
     },
-    uncheckTowns: function () {
-        Array.prototype.forEach.call($('.main_check_list input'), function (e) {
+    uncheckTowns: function (modal_popup) {
+        Array.prototype.forEach.call(modal_popup.find('.main_check_list input'), function (e) {
             if ($(e).is(':checked')) {
                 $(e).removeAttr('checked')
             }
@@ -113,44 +132,44 @@ var homeEvents = {
             }
         })
     },
-    activeCity: function () {
+    activeCity: function (modal_popup) {
         var nav_item;
-        Array.prototype.forEach.call($('.top_select li'), function (e) {
+        Array.prototype.forEach.call(modal_popup.find('.top_select li'), function (e) {
             if ($(e).hasClass('active')) {
                 nav_item = $(e).text();
             }
         });
         return nav_item;
     },
-    addRegion: function () {
+    addRegion: function (modal_popup) {
         var self = this;
-        $('.modal_navigation').find('.nav_items').text(self.activeCity())
+        modal_popup.find('.modal_navigation').find('.nav_items').text(self.activeCity(modal_popup))
     },
-    selectRegion: function(){
+    selectRegion: function(modal_popup){
         var self = this,
-            main_list_item = $('.main_list li'),
-            main_list = $('.main_list'),
-            modal_navigation = $('.modal_navigation'),
-            check_list = $('.check_list');
+            main_list_item = modal_popup.find('.main_list li'),
+            main_list = modal_popup.find('.main_list'),
+            modal_navigation = modal_popup.find('.modal_navigation'),
+            check_list = modal_popup.find('.check_list');
         main_list_item.on('click', function(){
             main_list.hide();
             modal_navigation.show();
             check_list.show();
-            self.makeTownList(4);
-            self.addTown();
+            self.makeTownList(4, modal_popup);
+            self.addTown(modal_popup);
         })
     },
-    addTown: function () {
+    addTown: function (modal_popup) {
         var self = this,
             townStr = '';
-        $('.main_check_list input').on('change', function () {
+        modal_popup.find('.main_check_list input').on('change', function () {
             if ($(this).is(':checked')) {
                 self.townArr.push($(this).next().text());
                 townStr = self.townArr.toString();
-                if ($('.modal_navigation').find('li.nav_items').length) {
-                    $('.modal_navigation').find('li.nav_items').text(townStr);
+                if (modal_popup.find('.modal_navigation').find('li.nav_items').length) {
+                    modal_popup.find('.modal_navigation').find('li.nav_items').text(townStr);
                 } else {
-                    $('.modal_navigation').append('<li class="nav_items">' + townStr + '</li>');
+                    modal_popup.find('.modal_navigation').append('<li class="nav_items">' + townStr + '</li>');
                 }
             } else if (self.townArr.length) {
                 var index = self.townArr.indexOf($(this).next().text());
@@ -158,21 +177,21 @@ var homeEvents = {
                     self.townArr.splice(index, 1);
                     townStr = self.townArr.toString();
                     if (self.townArr.length) {
-                        $('.modal_navigation').find('li.nav_items').text(townStr);
+                        modal_popup.find('.modal_navigation').find('li.nav_items').text(townStr);
                     } else {
-                        $('.modal_navigation').find('li.nav_items').remove()
+                        modal_popup.find('.modal_navigation').find('li.nav_items').remove()
                     }
                 }
             }
         })
     },
-    makeTownList: function (maxListLength) {
+    makeTownList: function (maxListLength, modal_popup) {
         var self = this,
             arrToNextList = [],
             arrToInsert = [],
             insertStr = '',
             cutStr = '',
-            townList = $('.main_check_list'),
+            townList = modal_popup.find('.main_check_list'),
             length = townList.length,
             lastList = townList.eq(length - 1).find('li'),
             clone = lastList.clone();
@@ -183,12 +202,12 @@ var homeEvents = {
             for (var j = 0; j < maxListLength; j++) {
                 insertStr += arrToInsert[j].outerHTML;
             }
-            townList.eq(length - 1).find('ul').append(insertStr)
+            townList.eq(length - 1).find('ul').append(insertStr);
             for (var i = 0; i < arrToNextList.length; i++) {
                 cutStr += arrToNextList[i].outerHTML;
             }
-            $('ul.check_list').append('<li class="main_check_list"><ul>' + cutStr + '</ul></li>');
-            self.makeTownList(maxListLength)
+            modal_popup.find('ul.check_list').append('<li class="main_check_list"><ul>' + cutStr + '</ul></li>');
+            self.makeTownList(maxListLength, modal_popup)
         }
     },
     rangeSlyder: function(){
@@ -226,7 +245,7 @@ var homeEvents = {
     },
     selectDropdown: function(){
         var self = this,
-            dropdowns = $('.categories_dropdowns>li'),
+            dropdowns = $('.small_arrow'),
             dropdownsParent = $('#container');
         for(var i=0; i<=dropdowns.length; i++){
             $(dropdowns[i]).on('click', function(e){
