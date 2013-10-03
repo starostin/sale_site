@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search results</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/jcf.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jcf.js"></script>
+    <script src="js/jcf.select.js"></script>
+    <script src="js/slyder.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body >
+<div id="wrapper">
+<header>
+    <div id="head" class="align_container">
+        <img src="img/logo.png" alt="Logo" class="vert_align"/>
+        <p class="vert_align">EN <span>&#9662</span></p>
+        <div class="notifications vert_align" style="display: none">Notifications</div>
+        <div class="favorites vert_align" style="display: none">Favorites</div>
+        <div id="login_link">
+            <span><a href="#">Log in</a> or </span>
+            <div class="user vert_align" style="display: none">Tom 68</div>
+            <div id="add_product_small" class="button red">
+                <span>Add Product</span>
+            </div>
+            <div class="tip" style="display: none">
+                <input type="text" placeholder="Username:"/>
+                <input type="text" placeholder="Password:"/>
+                <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div id="login">
+                    <div id="log_btn" class="button blue"><p>Login</p></div>
+                    <div id="reg"><a href="#">Registration</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="after_header" class="align_container">
+    <div class="align_container">
+        <p>Total active ads: 4 451 117 <span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
+        <label for="product_search">Find</label>
+        <input type="text" id="product_search"/>
+        <label for="location_search">in</label>
+        <input type="text" id="location_search"placeholder="My campus"/>
+        <!--<input type="text" id="location_icon"/>-->
+        <div id="location_icon"></div>
+        <div class="modal_popup" style="display: none" id="loc_popup">
+            <div class="arrow-up"><div class="arrow-up-inside"></div></div>
+            <ul class="top_select">
+                <li>Denmark</li>
+                <li>Norway</li>
+                <li>Switzerland</li>
+                <li>United Kingdom</li>
+                <li class="active">Everywhere</li>
+            </ul>
+            <ul class="main_list">
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+            </ul>
+            <ul class="modal_navigation" style="display: none">
+                <li class="region">Everywhere</li>
+            </ul>
+            <ul class="check_list" style="display: none">
+                <li class="main_check_list">
+                    <ul>
+                        <li>
+                            <input type="checkbox" hidden id="1" />
+                            <label for="1">1Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="2" />
+                            <label for="2">2Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="3" />
+                            <label for="3">3Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="4" />
+                            <label for="4">4Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="5" />
+                            <label for="5">5Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="6" />
+                            <label for="6">6Region Kiev</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="search_button" class="button blue"><img src="img/search.png" alt="search" class="vert_align"/></div>
+    </div>
+</div>
+<div class="line"></div>
+<div id="container" class="align_container">
+    <div class="item_navigation">
+        <div class="item_left_arrow"></div>
+        <div class="nav_text">Book / Design / The user expirience</div>
+        <div class="item_right_arrow"></div>
+    </div>
+    <div class="item_label">
+        <p>The User Experience team of one by Leah Buley</p>
+        <img src="img/star.png" alt="star"/>
+    </div>
+    <div class="item_info">
+        <p>Added 25.04.2013 from University of Southern Denmark, Odense, DK</p>
+        <p>Views: 83</p>
+    </div>
+    <div class="general_info">
+        <div class="item_desc">
+            <div class="item_photos">
+                <div class="big_photo"></div>
+                <ul class="small_photos">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="text_desc">
+                <ul class="desc_labels">
+                    <li class="tab_label description"></li>
+                    <li class="tab_label features"></li>
+                    <li class="tab_label store_price"></li>
+                    <li class="tab_label library"></li>
+                </ul>
+                <div class="tab_text for_description">
+                    The User Experience Team of One prescribes a range of approaches that have big impact and take less time and fewer resources than the standard lineup of UX deliverables. Whether you want to cross over into user experience or you're a seasoned practitioner trying to drag your organization forward, this book gives you tools and insight for doing more with less.
+                </div>
+                <div class="tab_text for_features">
+                    The User Experience Team of One prescribes a range of approaches that have big impact and take less time and fewer resources than the standard lineup of UX deliverables. Whether you want to cross over into user experience or you're a seasoned practitioner trying to drag your organization forward, this book gives you tools and insight for doing more with less.
+                </div>
+                <div class="tab_text for_store">
+                    The User Experience Team of One prescribes a range of approaches that have big impact and take less time and fewer resources than the standard lineup of UX deliverables. Whether you want to cross over into user experience or you're a seasoned practitioner trying to drag your organization forward, this book gives you tools and insight for doing more with less.
+                </div>
+                <div class="tab_text for_library">
+                    The User Experience Team of One prescribes a range of approaches that have big impact and take less time and fewer resources than the standard lineup of UX deliverables. Whether you want to cross over into user experience or you're a seasoned practitioner trying to drag your organization forward, this book gives you tools and insight for doing more with less.
+                </div>
+            </div>
+        </div>
+        <div class="seller_desc">
+            <div class="item_price">
+                <ul class="options">
+                    <li class="sel"><a href="#">DKK</a></li>
+                    <li class="sel"><a href="#">SEK</a></li>
+                    <li class="sel"><a href="#">NOK</a></li>
+                    <li class="sel"><a href="#">GPB</a></li>
+                </ul>
+                <p>$ 1058.99</p>
+            </div>
+            <div class="seller_name">
+                <p>Scarlet Johanson</p>
+                <p>since 17.04.2014</p>
+                <p><a href="#">All authors ads</a></p>
+            </div>
+            <div class="seller_contact">
+                <div class="show_number">
+                    Show Number
+                </div>
+                <div class="button blue">
+                    <p>@ Email Seller</p>
+                </div>
+                <div class="map"></div>
+                <div class="other">
+                    <div class="print">Print</div>
+                    <div class="spam">Spam</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<h2 class="slyder_label">Customers also buy</h2>
+<ul class="slyder goods bottom" id="other">
+    <li></li>
+    <li id="iphone"><a><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
+    <li><a><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+    <li><a><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+    <li><a><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
+    <li><a><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+    <li></li>
+</ul>
+</div>
+<footer>
+    <div class="line"></div>
+    <div class="align_container">
+        <ul id="navigation">
+            <li><a href="#">Contact Us</a></li>
+            <li>|</li>
+            <li><a href="#">Blog</a></li>
+            <li>|</li>
+            <li id="app"><a href="#">App Site</a></li>
+            <li>Follow us</li>
+            <li><a href="#"><img src="img/google.png" alt="google"/></a></li>
+            <li><a href="#"><img src="img/facebook.png" alt="facebook"/></a></li>
+            <li><a href="#"><img src="img/twitter.png" alt="twitter"/></a></li>
+        </ul>
+    </div>
+</footer>
+</div>
+</body>
+<script type="text/javascript">
+    // заменить все кастомные элементы когда страница будет загружена
+    jcf.lib.domReady(function(){
+        jcf.customForms.replaceAll();
+    });
+</script>
+</html>
