@@ -8,18 +8,21 @@
 var homeEvents = {
     townArr: [],
     rememberedPopup: [],
+    logined: false,
+    favorCounter: 0,
     loginPopup: function(){
         $('#login_link>span').on('click', function(e){
             e.preventDefault();
-            $('.tip').toggle();
+            $('.login_tip').toggle();
         })
         this.loginUser();
     },
     loginUser: function(){
-        var notific = $('.notifications'),
+        var self = this,
+            notific = $('.notifications'),
             favor = $('.favorites'),
             loginLabel = $('#login_link>span'),
-            loginPopup = $('.tip'),
+            loginPopup = $('.login_tip'),
             userLabel = $('.user');
         $('#log_btn').on('click', function(e){
             loginPopup.hide();
@@ -27,6 +30,7 @@ var homeEvents = {
             notific.show();
             favor.show();
             userLabel.show();
+            self.logined = true;
         })
     },
     location: function(){
@@ -251,19 +255,94 @@ var homeEvents = {
             }
             $(this).css('display', 'none');
         })
+    },
+    addToFavorite: function(){
+        var self = this;
+        $('.add_to_favorite').on('click', function(){
+            if(self.logined){
+                if($(this).hasClass('inactive')){
+                    $(this).attr('src', 'img/star.png');
+                    $('.favorites').addClass('favorites_active');
+                    self.addNumberToFavorite()
+                }else{
+                    $(this).attr('src', 'img/star_inactive.png');
+                    self.removeNumberFromFavorite();
+                }
+                $(this).toggleClass('inactive');
+            }
+        })
+    },
+    addNumberToFavorite: function(){
+        var self = this;
+        self.favorCounter ++;
+        var str = '(' + self.favorCounter + ')';
+        $('.favor_numbers').text(str);
+    },
+    removeNumberFromFavorite: function(){
+        var self = this;
+        self.favorCounter --;
+        var str = '(' + self.favorCounter + ')';
+        if(self.favorCounter === 0){
+            $('.favorites').removeClass('favorites_active');
+            str = ''
+        }
+        $('.favor_numbers').text(str);
+    },
+    showFavoritePopup: function(){
+        var self = this;
+        $('.favor_click').on('click', function(){
+            if(self.favorCounter > 0){
+                $('.favorite_tip').toggle();
+            }
+        })
+    },
+    changeTab: function(){
+        var self = this,
+            parent = $('.text_desc'),
+            previous_classes;
+        $('.desc_labels li').on('click', function(){
+            previous_classes = $('.tab_selected').attr('class');
+            var selected = this.className.split(' ')[1];
+            var previous = previous_classes.split(' ')[1];
+            $('.for_' + previous).hide();
+            $('.for_' + selected).show();
+            self.removeActiveClass(parent, 'desc_labels', 'tab_selected');
+            $(this).addClass('tab_selected');
+        })
+    },
+    showNumber: function(){
+        $('.show_number').on('click', function(){
+            $(this).replaceWith('<p class="phone_number">12-312-388</p>');
+        })
+    },
+    sendEmail: function(){
+        $('#seller_email').on('click', function(){
+            $('.layout').show();
+        })
+    },
+    closeEmailWindow: function(){
+        $('.message').find('.close, #send_email').on('click', function(){
+            $('.layout').hide();
+        })
     }
 };
 $(document).ready(function(){
     homeEvents.loginPopup();
     homeEvents.location();
     homeEvents.locationPopup('#loc_popup', '#location_icon');
-    homeEvents.locationPopup(null, '#drop_books');
-    homeEvents.locationPopup(null, '#drop_phones');
-    homeEvents.locationPopup(null, '#drop_cameras');
-    homeEvents.locationPopup(null, '#drop_laptops');
-    homeEvents.locationPopup(null, '#drop_tablets');
-    homeEvents.locationPopup(null, '#drop_bicycles');
-    homeEvents.locationPopup(null, '#drop_tvs');
-    homeEvents.rangeSlyder();
-    homeEvents.seeMore('see_more', 12);
+//    homeEvents.locationPopup(null, '#drop_books');
+//    homeEvents.locationPopup(null, '#drop_phones');
+//    homeEvents.locationPopup(null, '#drop_cameras');
+//    homeEvents.locationPopup(null, '#drop_laptops');
+//    homeEvents.locationPopup(null, '#drop_tablets');
+//    homeEvents.locationPopup(null, '#drop_bicycles');
+//    homeEvents.locationPopup(null, '#drop_tvs');
+//    homeEvents.rangeSlyder();
+//    homeEvents.seeMore('see_more', 12);
+    homeEvents.addToFavorite();
+    homeEvents.showFavoritePopup();
+    homeEvents.changeTab();
+    homeEvents.showNumber();
+    homeEvents.sendEmail();
+    homeEvents.closeEmailWindow();
 });
