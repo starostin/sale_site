@@ -1,5 +1,6 @@
 body{
     background: url(../img/bg_gray.jpg);
+    font: 16px 'open_sansregular', sans-serif;
 }
 .with_bg_image{
     background: url(../img/bg_image.jpg) no-repeat;
@@ -53,7 +54,7 @@ header div#head{
 }
 header div#head>p{
     margin-left: 35px;
-    font: 16px sans-serif;
+    font: 16px 'open_sanslight' sans-serif;
 }
 header div#head p span{
     margin-left: 10px;
@@ -78,6 +79,7 @@ header #login_link{
     vertical-align: middle;
     cursor: pointer;
     color: white;
+    font-family: 'open_sanssemibold', sans-serif;
 }
 .button:active {
     -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -121,14 +123,19 @@ header #login_link{
     vertical-align: top;
     margin-left: 65px;
     color: white;
-    font: italic 14px sans-serif;
+    font: 14px 'open_sansitalic', sans-serif;
+}
+.bold_italic{
+    font: 14px 'open_sansbold_italic', sans-serif;
 }
 label{
-    font: 18px sans-serif;
+    font: 18px 'open_sansbold', sans-serif;
     color: white;
 }
 #after_header div p span{
     vertical-align: top;
+}
+#lacate_me{
     margin-left: 500px;
 }
 #arrow_for_search{
@@ -748,7 +755,7 @@ div.arrow-up-inside{
 .slyder_label{
     margin: 24px 0 24px 50px;
     text-align: left;
-    font-size: 20px;
+    font: 20px 'Fjord One', serif;
     color: #1da278;
 }
 .slyder_label a{
@@ -856,6 +863,7 @@ div.arrow-up-inside{
 }
 .big_item_label{
     font-size: 26px;
+    font-family: 'Fjord One', serif;
     color: #1da278;
 }
 .item_label p{
