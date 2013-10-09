@@ -10,7 +10,6 @@ body{
 header{
     background: white;
     width: 100%;
-    font: 16px sans-serif;
 }
 .align_container{
     width: 980px;
@@ -72,7 +71,6 @@ header #login_link{
 #login_link a{
     margin-right: 10px;
     color: #23aadc;
-    font-size: 16px;
 }
 .button{
     text-align: center;
@@ -106,7 +104,7 @@ header #login_link{
 }
 #add_product_small span{
     vertical-align: middle;
-    font: 18px sans-serif;
+    font-size: 18px;
 }
 /*after header*/
 #after_header{
@@ -117,7 +115,7 @@ header #login_link{
 }
 #after_header>div{
     position: relative;
-    padding: 14px 10px 14px 25px;
+    padding: 14px 0;
 }
 #after_header div p{
     vertical-align: top;
@@ -164,7 +162,8 @@ input{
     width: 244px;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    black;
+    color: black;
+    font-family: 'open_sanslight', sans-serif;
 }
 #location_icon{
     display: inline-block;
@@ -180,8 +179,7 @@ input{
     line-height: 36px;
     width: 88px;
     display: inline-block;
-    margin-left: 34px;
-    margin-bottom: 4px;
+    float: right;
 }
 /*container*/
 #container{
@@ -190,7 +188,7 @@ input{
 }
 #container>h1{
     padding-top: 48px;
-    font: 36px sans-serif;
+    font: 36px 'Fjord One', serif;
 }
 #categories{
     height: 315px;
@@ -210,7 +208,7 @@ input{
     height: 154px;
 }
 .blocks p{
-    font: 22px serif;
+    font: 22px 'Fjord One', serif;
     color: #454444;
     margin-top: 40%;
 }
@@ -245,14 +243,14 @@ input{
     margin-top: 38px;
     float: right;
     height: 63px;
+    line-height: 63px;
     width: 272px;
     background: url(../img/button_bg.jpg) repeat-x;
     border: 2px solid #ced9e7;
     border-radius: 4px;
 }
 #button>p{
-    margin-top: 20px;
-    font: 24px sans-serif;
+    font-size: 24px;
 }
 #plus{
     height: 100%;
@@ -261,7 +259,7 @@ input{
     float: left;
 }
 #plus>span{
-    font:54px sans-serif;
+    font-size:54px;
     color: white;
 }
 .slyder{
@@ -309,7 +307,7 @@ input{
     margin-bottom: 10px;
 }
 .goods>li>a>p{
-    font: 12px/18px sans-serif;
+    font: 12px/18px 'open_sansregular', sans-serif;
     color: #3e6692;
 }
 .goods>li>a>p.price{
@@ -319,7 +317,7 @@ input{
     right:0;
     margin-left:auto;
     margin-right:auto;;
-    font: 20px/28px sans-serif;
+    font: 20px/28px 'open_sanssemibold', sans-serif;
     color: #e36060;
 }
 .slyder.bottom{
@@ -327,7 +325,7 @@ input{
     margin-bottom: 0;
 }
 #university_slyder>h2{
-    font: 22px sans-serif;
+    font: 22px 'open_sanssemibold', sans-serif;
 }
 .un_slyder{
     height: 100px;
@@ -376,7 +374,7 @@ footer>div{
      vertical-align: middle;
      display: inline-block;
      margin: 0 5px;
-     font: 14px sans-serif;
+     font: 14px 'open_sanssemibold', sans-serif;
      color: white;
 }
 #navigation>li:first-child{
@@ -385,11 +383,11 @@ footer>div{
 #navigation>li>a{
     display: inline-block;
     margin: 0 5px;
-    font: 14px sans-serif;
+    font: 14px 'open_sanssemibold', sans-serif;
     color: white;
 }
 #navigation>#app{
-    margin-right: 460px;
+    margin-right: 440px;
 }
 
 
@@ -401,7 +399,7 @@ footer>div{
     border: 2px solid #37968d;
     border-radius: 3px;
     position: absolute;
-    font-size: 14px;
+    font: 13px 'open_sansregular', 'sans-serif';
     z-index: 100;
 }
 /* arrows - :before and :after */
@@ -415,7 +413,7 @@ footer>div{
     content:'';
 }
 .tip a{
-    font-family: sans-serif;
+    font: 13px 'open_sansregular', 'sans-serif';
 }
 .tip:after {
     position: absolute;
@@ -489,7 +487,7 @@ footer>div{
     text-align: left;
 }
 #remember_me label{
-    font: 13px sans-serif;
+    font: 13px 'open_sansregular', 'sans-serif';
     color: #69746e;
     cursor: pointer;
 }
@@ -517,7 +515,6 @@ input[type="checkbox"]:checked + label:before {
 /*----------------------checkboxes EEEEEENNNNNDDDDD------------------------------*/
 #remember_me a{
     float: right;
-    font-size: 13px;
 }
 #login{
     text-align: right;
@@ -527,11 +524,14 @@ input[type="checkbox"]:checked + label:before {
     width:110px;
     height: 36px;
     float:left;
-    font: 16px sans-serif;
+    font-size: 16px;
     line-height: 36px;
 }
 #reg{
-    line-height:36px
+    line-height: 36px;
+}
+#reg a{
+    font-size: 16px;
 }
 /*-----------------------------------select top_select------------------------------------------*/
 
