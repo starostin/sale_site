@@ -370,24 +370,25 @@ footer{
 footer>div{
     line-height: 54px;
 }
-#navigation>li{
+.footer_nav li{
      vertical-align: middle;
      display: inline-block;
      margin: 0 5px;
      font: 14px 'open_sanssemibold', sans-serif;
      color: white;
 }
-#navigation>li:first-child{
+.footer_nav>li:first-child{
     margin-left: 40px;
 }
-#navigation>li>a{
+.footer_nav li>a{
     display: inline-block;
     margin: 0 5px;
     font: 14px 'open_sanssemibold', sans-serif;
     color: white;
 }
-#navigation>#app{
-    margin-right: 440px;
+li.right{
+    line-height: 54px;
+    float: right;
 }
 
 
