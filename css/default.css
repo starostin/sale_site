@@ -1196,4 +1196,18 @@ div.small-arrow-up-inside{
     line-height: 40px;
     vertical-align: top;
 }
-
+/*.prod_category{*/
+    /*display: table;*/
+    /*margin: auto;*/
+/*}*/
+/*.prod_category label, .prod_category select{*/
+    /*display: table-cell;*/
+/*}*/
+/*.prod_category label{*/
+    /*vertical-align: middle;*/
+/*}*/
+/*.row{*/
+    /*display: table-row;*/
+    /*float: left;*/
+    /*margin-top: 18px;*/
+/*}*/

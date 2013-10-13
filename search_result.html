@@ -20,14 +20,20 @@
             <img src="img/logo.png" alt="Logo" class="vert_align"/>
             <p class="vert_align">EN <span>&#9662</span></p>
             <div class="notifications vert_align" style="display: none">Notifications</div>
-            <div class="favorites vert_align" style="display: none">Favorites</div>
+            <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
+                <div class="tip favorite_tip" style="display: none">
+                    <img src="img/favorite_pic.jpg" alt="favorite"/>
+                    Prototyping A Practitioner’s Guide
+                    <p class="favor_price">$ 54.99</p>
+                </div>
+            </div>
             <div id="login_link">
                 <span><a href="#">Log in</a> or </span>
                 <div class="user vert_align" style="display: none">Tom 68</div>
                 <div id="add_product_small" class="button red">
                     <span>Add Product</span>
                 </div>
-                <div class="tip" style="display: none">
+                <div class="tip login_tip" style="display: none">
                     <input type="text" placeholder="Username:"/>
                     <input type="text" placeholder="Password:"/>
                     <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
@@ -326,16 +332,20 @@
     <footer>
         <div class="line"></div>
         <div class="align_container">
-            <ul id="navigation">
+            <ul class="footer_nav">
                 <li><a href="#">Contact Us</a></li>
                 <li>|</li>
                 <li><a href="#">Blog</a></li>
                 <li>|</li>
                 <li id="app"><a href="#">App Site</a></li>
-                <li>Follow us</li>
-                <li><a href="#"><img src="img/google.png" alt="google"/></a></li>
-                <li><a href="#"><img src="img/facebook.png" alt="facebook"/></a></li>
-                <li><a href="#"><img src="img/twitter.png" alt="twitter"/></a></li>
+                <li class="right">
+                    <ul>
+                        <li>Follow us</li>
+                        <li><a href="#"><img src="img/google.png" alt="google"/></a></li>
+                        <li><a href="#"><img src="img/facebook.png" alt="facebook"/></a></li>
+                        <li><a href="#"><img src="img/twitter.png" alt="twitter"/></a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </footer>

@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book market</title>
+    <title>Add product</title>
     <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/jcf.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jcf.js"></script>
+    <script src="js/jcf.select.js"></script>
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-<div id="wrapper" class="with_bg_image">
+<div id="wrapper">
     <header>
         <div id="head" class="align_container">
             <img src="img/logo.png" alt="Logo" class="vert_align"/>
@@ -44,9 +48,30 @@
         </div>
     </header>
     <div id="container" class="align_container">
-        <div class="prod_category">
-
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <label>Sort:</label>
+                </td>
+                <td>
+                    <select name="sort">
+                        <option value="date">by date</option>
+                        <option value="price">by price</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Sort:</label>
+                </td>
+                <td>
+                    <select name="sort>
+                        <option value="date">by date</option>
+                        <option value="price">by price</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
         <div class="prod_info">
 
         </div>
@@ -83,4 +108,10 @@
     </footer>
 </div>
 </body>
+<script type="text/javascript">
+    // заменить все кастомные элементы когда страница будет загружена
+    jcf.lib.domReady(function(){
+        jcf.customForms.replaceAll();
+    });
+</script>
 </html>
