@@ -1212,6 +1212,10 @@ td input{
     min-width: 200px;
     margin: 0;
 }
+.prod_info{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
 .prod_title{
     padding: 25px 0;
     border-bottom: 1px solid black;
@@ -1244,18 +1248,7 @@ td input{
 #prod_currency{
     padding-right: 120px;
 }
-/*.prod_category{*/
-    /*display: table;*/
-    /*margin: auto;*/
-/*}*/
-/*.prod_category label, .prod_category select{*/
-    /*display: table-cell;*/
-/*}*/
-/*.prod_category label{*/
-    /*vertical-align: middle;*/
-/*}*/
-/*.row{*/
-    /*display: table-row;*/
-    /*float: left;*/
-    /*margin-top: 18px;*/
-/*}*/
+.prod_photo{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
