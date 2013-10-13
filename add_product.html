@@ -51,9 +51,9 @@
         <table>
             <tr>
                 <td>
-                    <label>Sort:</label>
+                    <label>Sort adasd:</label>
                 </td>
-                <td>
+                <td class="input">
                     <select name="sort">
                         <option value="date">by date</option>
                         <option value="price">by price</option>
@@ -64,16 +64,78 @@
                 <td>
                     <label>Sort:</label>
                 </td>
-                <td>
-                    <select name="sort>
+                <td class="input">
+                    <select name="sort">
                         <option value="date">by date</option>
                         <option value="price">by price</option>
                     </select>
                 </td>
             </tr>
         </table>
+        <div class="input_not_in_table prod_title"><label for="title">Title: </label><input type="text" id="title"/></div>
         <div class="prod_info">
-
+            <table>
+                <tr>
+                    <td>
+                        <label>Sort adasd:</label>
+                    </td>
+                    <td class="input">
+                        <select name="sort">
+                            <option value="date">by date</option>
+                            <option value="price">by price</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="author">Sort:</label>
+                    </td>
+                    <td class="input">
+                        <input type="text" id="author" class="prod_input"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="author">Sort:</label>
+                    </td>
+                    <td class="input">
+                        <input type="text" id="author" class="prod_input"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="used"><label for="used">Remember Me</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="marked"><label for="marked">Remember Me</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="shipping"><label for="shipping">Remember Me</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="textarea"><label for="desc">Title: </label><textarea name="desc" id="desc" cols="50" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Price:</label>
+                    </td>
+                    <td class="input" id="prod_currency">
+                        <input type="text" id="price" class="prod_input"/>
+                        <select name="sort">
+                            <option value="date">by date</option>
+                            <option value="price">by price</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="prod_photo">
 

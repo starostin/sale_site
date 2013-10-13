@@ -1196,6 +1196,54 @@ div.small-arrow-up-inside{
     line-height: 40px;
     vertical-align: top;
 }
+table{
+    margin: auto;
+    width: 100%;
+}
+td{
+    vertical-align: middle;
+    padding-top: 20px;
+    text-align: right;
+}
+td label{
+    color: black;
+}
+td input{
+    min-width: 200px;
+    margin: 0;
+}
+.prod_title{
+    padding: 25px 0;
+    border-bottom: 1px solid black;
+}
+.input_not_in_table label{
+    color: black;
+}
+.prod_title input{
+    width: 500px;
+    height: 28px;
+    border: 1px solid red;
+}
+.prod_input{
+    height: 28px;
+    border: 1px solid red;
+}
+.input{
+    text-align: left;
+    width: 60%;
+}
+.textarea{
+    text-align: center;
+}
+.textarea label{
+    vertical-align: top;
+}
+#price{
+    float: left;
+}
+#prod_currency{
+    padding-right: 120px;
+}
 /*.prod_category{*/
     /*display: table;*/
     /*margin: auto;*/
