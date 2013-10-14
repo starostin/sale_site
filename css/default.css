@@ -1252,3 +1252,8 @@ td input{
     border-bottom: 1px solid black;
     padding-bottom: 20px;
 }
+.block{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}

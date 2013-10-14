@@ -202,9 +202,9 @@ td .select-area{
 	background: white;
 	color: red;
 	float: left;
-	height: 40px;
+	height: 60px;
     line-height: 40px;
-    width: 40px;
+    width: 60px;
     font-size: 42px;
     font-weight: bold;
 }
