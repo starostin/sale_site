@@ -1196,8 +1196,11 @@ div.small-arrow-up-inside{
     line-height: 40px;
     vertical-align: top;
 }
+.prod_form input{
+    box-sizing: border-box;
+}
 table{
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
 }
 td{
@@ -1207,18 +1210,15 @@ td{
 }
 td label{
     color: black;
+    padding-right: 10px;
 }
 td input{
     min-width: 200px;
     margin: 0;
 }
-.prod_info{
+.bottom_bord{
     border-bottom: 1px solid black;
     padding-bottom: 20px;
-}
-.prod_title{
-    padding: 25px 0;
-    border-bottom: 1px solid black;
 }
 .input_not_in_table label{
     color: black;
@@ -1230,33 +1230,29 @@ td input{
 }
 .prod_input{
     height: 28px;
-    border: 1px solid red;
+    border: 1px solid #a3c6d8;
 }
 .input{
     text-align: left;
-    width: 60%;
+    width: 55%;
 }
 .align_left{
-    padding-right: 35%;
+    padding-right: 32.7%;
 }
-.textarea{
+.align_left_wild{
+    padding-right: 30%;
+}
+.horiz_align_center{
     text-align: center;
 }
-.file{
+.horiz_align_right{
     text-align: right;
 }
-.textarea label, .file label{
-    vertical-align: top;
-}
-#price{
-    float: left;
-}
-#prod_currency{
-    padding-right: 120px;
-}
-.prod_photo{
-    border-bottom: 1px solid black;
-    padding-bottom: 20px;
+.vert_align_top{
+     vertical-align: top;
+ }
+.vert_align_center{
+    vertical-align: middle;
 }
 .block{
     width: 86px;
@@ -1266,29 +1262,22 @@ td input{
 .block_for_inp{
     text-align: center;
     overflow: hidden;
-    border: 1px solid #038f1a;
     background-color: #038f1a;
 }
 .input_file {
-    margin-top: -50px;
     margin-left:-410px;
     opacity: 0;
     font-size: 150px;
     height: 100px;
 }
-.prod_email{
-    border-bottom: 1px solid black;
-    padding-bottom: 20px;
-}
-.prod_phone{
-    border-bottom: 1px solid black;
-    padding-bottom: 20px;
-}
 #prod_submit{
     display: inline-block;
     margin-top: 50px;
     margin-bottom: 100px;
-    width: 300px;
-    height: 38px;
-    line-height: 38px;
+    width: 376px;
+    height: 35px;
+    line-height: 35px;
+}
+.full_width{
+    width: 100%;
 }

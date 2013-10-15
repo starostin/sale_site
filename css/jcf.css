@@ -55,14 +55,6 @@
     margin-left: 10px;
     margin-right: 30px;
 }
-td .select-area{
-    min-width: 230px;
-    margin: 0;
-    float: none;
-}
-#prod_currency .select-area{
-    float: right;
-}
 .select-area .center {
 	float: left;
 	padding: 4px 10px;

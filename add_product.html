@@ -4,7 +4,7 @@
     <title>Add product</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/default.css"/>
-    <link rel="stylesheet" href="css/jcf.css"/>
+    <link rel="stylesheet" href="css/jcf_aqua.css"/>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -48,101 +48,111 @@
             </div>
         </div>
     </header>
-    <div id="container" class="align_container">
-        <table>
-            <tr>
-                <td>
-                    <label>Sort adasd:</label>
-                </td>
-                <td class="input">
-                    <select name="sort">
-                        <option value="date">by date</option>
-                        <option value="price">by price</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Sort:</label>
-                </td>
-                <td class="input">
-                    <select name="sort">
-                        <option value="date">by date</option>
-                        <option value="price">by price</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
-        <div class="input_not_in_table prod_title"><label for="title">Title: </label><input type="text" id="title"/></div>
-        <div class="prod_info">
+    <div id="container" class="align_container prod_form">
+        <div class="bottom_bord">
             <table>
                 <tr>
                     <td>
-                        <label>Sort adasd:</label>
+                        <label>Choose category</label>
                     </td>
-                    <td class="input">
+                    <td class="input aqua">
                         <select name="sort">
-                            <option value="date">by date</option>
-                            <option value="price">by price</option>
+                            <option value="books">Books</option>
+                            <option value="laptops">LapTops</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="author">Sort:</label>
+                        <label>Choose subcategory</label>
                     </td>
-                    <td class="input">
-                        <input type="text" id="author" class="prod_input"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="author">Sort:</label>
-                    </td>
-                    <td class="input">
-                        <input type="text" id="author" class="prod_input"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="input">
-                        <input type="checkbox" checked hidden id="used"><label for="used">Remember Me</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="input">
-                        <input type="checkbox" checked hidden id="marked"><label for="marked">Remember Me</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="input">
-                        <input type="checkbox" checked hidden id="shipping"><label for="shipping">Remember Me</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="textarea"><label for="desc">Title: </label><textarea name="desc" id="desc" cols="50" rows="10"></textarea></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Price:</label>
-                    </td>
-                    <td class="input" id="prod_currency">
-                        <input type="text" id="price" class="prod_input"/>
+                    <td class="input aqua">
                         <select name="sort">
-                            <option value="date">by date</option>
-                            <option value="price">by price</option>
+                            <option value="design">Design</option>
+                            <option value="behavior">Behavior</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="horiz_align_center" colspan="2">
+                        <label for="title">Title*</label>
+                        <input type="text" id="title" class="prod_input" style="width: 485px; height: 35px"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bottom_bord">
+            <table>
+                <tr>
+                    <td>
+                        <label>Edition</label>
+                    </td>
+                    <td class="input aqua">
+                        <select name="sort">
+                            <option value="date">1st edition</option>
+                            <option value="price">2nd edition</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="author">Author</label>
+                    </td>
+                    <td class="input align_left">
+                        <input type="text" id="author" class="prod_input full_width"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="id">ISBN-13</label>
+                    </td>
+                    <td class="input align_left">
+                        <input type="text" id="id" class="prod_input full_width"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="used"><label for="used">Used</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="marked"><label for="marked">Marked</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input">
+                        <input type="checkbox" checked hidden id="shipping"><label for="shipping">Shipping</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="horiz_align_center" style="padding-right: 60px;">
+                        <label for="desc" class="vert_align_top">Description* </label>
+                        <textarea name="desc" id="desc" rows="5" style="width: 485px"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Price*</label>
+                    </td>
+                    <td class="input aqua align_left" id="prod_currency">
+                        <input type="text" id="price" class="prod_input" style="min-width: 100px; width: 100px;"/>
+                        <select name="sort">
+                            <option value="date">GPB</option>
+                            <option value="price">DMP</option>
                         </select>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="prod_photo">
+        <div class="bottom_bord">
             <table>
                 <tr>
-                    <td class="file align_left" colspan="2">
-                            <label>Gere:</label>
+                    <td class="horiz_align_right align_left" colspan="2">
+                            <label class="vert_align_top">Add photo*</label>
                             <div class="block"><img src="img/add_prod1.jpg" alt=""/></div>
                             <div class="block"><img src="img/add_prod2.jpg" alt=""/></div>
                             <div class="block"><img src="img/add_prod3.jpg" alt=""/></div>
@@ -153,25 +163,25 @@
                 </tr>
             </table>
         </div>
-        <div class="prod_email">
+        <div class="bottom_bord">
             <table>
                 <tr>
                     <td>
-                        <label for="email">Price:</label>
+                        <label for="email">Email*</label>
                     </td>
-                    <td class="input">
-                        <input type="text" id="email" class="prod_input"/>
+                    <td class="input align_left">
+                        <input type="text" id="email" class="prod_input full_width"/>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="prod_phone">
+        <div class="bottom_bord">
             <table>
                 <tr>
                     <td class="file align_left" colspan="2">
-                        <label>Gere:</label>
-                        <input type="text" id="email" class="prod_input"/>
-                        <input type="text" id="email" class="prod_input"/>
+                        <label>Mobile Number*</label>
+                        <input type="text" id="zip" class="prod_input" style="width: 72px; min-width: 72px"/>
+                        <input type="text" id="phone" class="prod_input" style="width: 180px; min-width: 180px"/>
                     </td>
                 </tr>
             </table>
