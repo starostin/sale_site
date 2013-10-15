@@ -1236,10 +1236,16 @@ td input{
     text-align: left;
     width: 60%;
 }
+.align_left{
+    padding-right: 35%;
+}
 .textarea{
     text-align: center;
 }
-.textarea label{
+.file{
+    text-align: right;
+}
+.textarea label, .file label{
     vertical-align: top;
 }
 #price{
@@ -1253,7 +1259,36 @@ td input{
     padding-bottom: 20px;
 }
 .block{
-    width: 100px;
-    height: 100px;
+    width: 86px;
+    height: 86px;
     display: inline-block;
+}
+.block_for_inp{
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #038f1a;
+    background-color: #038f1a;
+}
+.input_file {
+    margin-top: -50px;
+    margin-left:-410px;
+    opacity: 0;
+    font-size: 150px;
+    height: 100px;
+}
+.prod_email{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.prod_phone{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+#prod_submit{
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 300px;
+    height: 38px;
+    line-height: 38px;
 }

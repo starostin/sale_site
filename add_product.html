@@ -10,7 +10,7 @@
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jcf.js"></script>
     <script src="js/jcf.select.js"></script>
-    <script src="js/jcf.file.js"></script>
+    <!--<script src="js/jcf.file.js"></script>-->
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -141,27 +141,42 @@
         <div class="prod_photo">
             <table>
                 <tr>
-                    <td class="textarea" colspan="2">
-                        <div>
-                        <div style="float: left">
-                            <label>Gere</label>
+                    <td class="file align_left" colspan="2">
+                            <label>Gere:</label>
                             <div class="block"><img src="img/add_prod1.jpg" alt=""/></div>
                             <div class="block"><img src="img/add_prod2.jpg" alt=""/></div>
                             <div class="block"><img src="img/add_prod3.jpg" alt=""/></div>
-                        </div>
-                        <input type="file" class="prod_input"/>
-                        </div>
+                            <div class="block block_for_inp">
+                                <input type="file" name="file" id="file" size="1" class="input_file">
+                            </div>
                     </td>
                 </tr>
             </table>
         </div>
         <div class="prod_email">
-
+            <table>
+                <tr>
+                    <td>
+                        <label for="email">Price:</label>
+                    </td>
+                    <td class="input">
+                        <input type="text" id="email" class="prod_input"/>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="prod_phone">
-
+            <table>
+                <tr>
+                    <td class="file align_left" colspan="2">
+                        <label>Gere:</label>
+                        <input type="text" id="email" class="prod_input"/>
+                        <input type="text" id="email" class="prod_input"/>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div class="button blue">Submit</div>
+        <div class="button blue" id="prod_submit">Submit</div>
     </div>
     <footer>
         <div class="line"></div>
