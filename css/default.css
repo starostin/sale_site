@@ -1232,6 +1232,10 @@ td input{
     height: 28px;
     border: 1px solid #a3c6d8;
 }
+textarea {
+    outline: none;
+    border: 1px solid #a3c6d8;
+}
 .input{
     text-align: left;
     width: 55%;
@@ -1261,10 +1265,18 @@ td input{
 }
 .block_for_inp{
     text-align: center;
+    line-height: 76px;
     overflow: hidden;
-    background-color: #038f1a;
+    border: 1px solid #a3c6d8;
+    box-sizing: border-box;
+}
+.inside_file{
+    color: #a3c6d8;
+    font-size: 46px;
+    font-weight: bold;
 }
 .input_file {
+    margin-top: -75px;
     margin-left:-410px;
     opacity: 0;
     font-size: 150px;
