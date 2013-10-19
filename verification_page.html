@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add product</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/jcf_aqua.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jcf.js"></script>
+    <script src="js/jcf.select.js"></script>
+    <script src="js/slyder.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            homeEvents.chooseLang();
+        });
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <header class="with_opacity">
+        <div id="head" class="align_container">
+            <a href="index.html"><img src="img/logo.png" alt="Logo" class="vert_align"/></a>
+            <div class="vert_align lang"> <span class="lang_chosen">EN</span><span class="lang_arrow">&#9662</span>
+                <ul class="choose_lang" style="display: none">
+                    <li>EN</li>
+                    <li>FR</li>
+                </ul>
+            </div>
+            <div class="notifications vert_align" style="display: none">Notifications</div>
+            <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
+                <div class="tip favorite_tip" style="display: none">
+                    <img src="img/favorite_pic.jpg" alt="favorite"/>
+                    Prototyping A Practitioner’s Guide
+                    <p class="favor_price">$ 54.99</p>
+                </div>
+            </div>
+            <div id="login_link">
+                <p class="add_prod_label">Add product to iSalg</p>
+            </div>
+        </div>
+    </header>
+    <div class="line light" style="height: 9px"></div>
+    <div id="container" class="align_container prod_form smaller_opacity" style="padding: 0 15px; min-height: 600px">
+        <div class="explantation clear">
+            <div class="inside clear">
+            <img src="img/radio_loc.png" alt="radio"/>
+            Thanks for registering on iSalg! Please, check your phone for a message from us!
+                Then input the access code in the textfield below and press Submit button
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td class="align_left" colspan="2">
+                    <label>Enter Access code</label>
+                    <input type="text" class="prod_input"/>
+                </td>
+            </tr>
+        </table>
+        <a href="index.html"><div class="button blue" id="prod_submit">Submit and Proceed</div></a>
+    </div>
+    <footer>
+        <div class="line light"></div>
+        <div class="align_container">
+            <ul class="footer_nav">
+                <li><a href="#">Contact Us</a></li>
+                <li>|</li>
+                <li><a href="#">Blog</a></li>
+                <li>|</li>
+                <li id="app"><a href="#">App Site</a></li>
+                <li class="right">
+                    <ul>
+                        <li>Follow us</li>
+                        <li><a href="#"><img src="img/google.png" alt="google"/></a></li>
+                        <li><a href="#"><img src="img/facebook.png" alt="facebook"/></a></li>
+                        <li><a href="#"><img src="img/twitter.png" alt="twitter"/></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

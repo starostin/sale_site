@@ -13,13 +13,33 @@
     <script src="js/jcf.select.js"></script>
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            homeEvents.loginPopup();
+            homeEvents.chooseLang();
+            homeEvents.location();
+            homeEvents.locationPopup('#loc_popup', '#location_icon');
+            homeEvents.addToFavorite();
+            homeEvents.showFavoritePopup();
+            homeEvents.changeTab();
+            homeEvents.showNumber();
+            homeEvents.sendEmail();
+            homeEvents.closeEmailWindow();
+            homeEvents.selectCurrency('.item_price');
+        });
+    </script>
 </head>
 <body >
 <div id="wrapper">
 <header>
     <div id="head" class="align_container">
-        <img src="img/logo.png" alt="Logo" class="vert_align"/>
-        <p class="vert_align">EN <span>&#9662</span></p>
+        <a href="index.html"><img src="img/logo.png" alt="Logo" class="vert_align"/></a>
+        <div class="vert_align lang"> <span class="lang_chosen">EN</span><span class="lang_arrow">&#9662</span>
+            <ul class="choose_lang" style="display: none">
+                <li>EN</li>
+                <li>FR</li>
+            </ul>
+        </div>
         <div class="notifications vert_align" style="display: none">Notifications</div>
         <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
             <div class="tip favorite_tip" style="display: none">
@@ -31,9 +51,11 @@
         <div id="login_link">
             <span><a href="#">Log in</a> or </span>
             <div class="user vert_align" style="display: none">Tom 68</div>
-            <div id="add_product_small" class="button red">
-                <span>Add Product</span>
-            </div>
+            <a href="add_product.html">
+                <div id="add_product_small" class="button red">
+                    <span>Add Product</span>
+                </div>
+            </a>
             <div class="tip login_tip" style="display: none">
                 <input type="text" placeholder="Username:"/>
                 <input type="text" placeholder="Password:"/>
@@ -48,12 +70,12 @@
         </div>
     </div>
 </header>
-<div id="after_header" class="align_container item_page">
+<div id="after_header" class="align_container item_page without_opacity">
     <div class="align_container">
         <p>Total active ads: <span class="bold_italic">4 451 117</span><span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
         <label for="product_search">Find</label>
         <input type="text" id="product_search"/>
-        <label for="location_search">in</label>
+        <label for="location_search" class="normal_font">in</label>
         <input type="text" id="location_search"placeholder="My campus"/>
         <!--<input type="text" id="location_icon"/>-->
         <div id="location_icon"></div>
@@ -110,12 +132,12 @@
         <div id="search_button" class="button blue"><img src="img/search.png" alt="search" class="vert_align"/></div>
     </div>
 </div>
-<div class="line"></div>
+<div class="line light"></div>
 <div id="container" class="align_container">
     <div class="item_navigation">
-        <img src="img/item_arrow_left.png" alt="arrow_left" class="item_arrow"/>
+        <a href="search_result.html"><img src="img/item_arrow_left.png" alt="arrow_left" class="item_arrow"/></a>
         <div class="nav_text">Book / Design / The user expirience</div>
-        <img src="img/item_arrow_right.png" alt="arrow_left" class="item_arrow"/>
+        <a href="item_page.html"><img src="img/item_arrow_right.png" alt="arrow_left" class="item_arrow"/></a>
     </div>
     <div class="item_label">
         <p class="big_item_label">The User Experience team of one by Leah Buley</p>
@@ -184,7 +206,8 @@
                     Show Number
                 </div>
                 <div class="button blue" id="seller_email">
-                    <p><span>@</span>Email Seller</p>
+                    <p><span class="btn_pic">@</span></p>
+                    <p><span class="btn_text">Email Seller</span></p>
                 </div>
                 <div class="map"><img src="img/map.jpg" alt=""/></div>
                 <div class="other">
@@ -206,7 +229,7 @@
 </ul>
 </div>
 <footer>
-    <div class="line"></div>
+    <div class="line light"></div>
     <div class="align_container">
         <ul class="footer_nav">
             <li><a href="#">Contact Us</a></li>
@@ -233,7 +256,7 @@
         </div>
         <div class="message_container">
             <p class="message_to">Message to: <img src="img/small_face.png" alt=""/> <span>Scarlet Johanson</span></p>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
             <input type="text" class="email" placeholder="Your email"/>
             <div class="button blue" id="send_email">SEND</div>
         </div>

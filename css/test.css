@@ -1,0 +1,8 @@
+.wrapper{
+    width: 100%;
+    height: 700px;
+    background: url(../img/bg_image.jpg) no-repeat;
+    background-size: 100% 900px;
+    -webkit-filter: blur(5px);
+    -webkit-mask: url(../img/mask.png);
+}

@@ -45,6 +45,7 @@
 /* custom select styles */
 .select-area {
 	border: 1px solid #a3c6d8;
+    background: white;
 	position: relative;
 	cursor: default;
 	height: 28px;
@@ -54,6 +55,7 @@
     line-height: 18px;
     margin-left: 10px;
     margin-right: 30px;
+    font: 14px "open_sanssemibold", sans-serif;
 }
 .select-area .center {
 	float: left;
@@ -81,6 +83,7 @@
     border-bottom: none;
 	overflow: hidden;
 	height: 1%;
+    font: 14px "open_sanssemibold", sans-serif;
 }
 .select-options ul {
 	list-style: none;

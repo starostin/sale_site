@@ -44,6 +44,8 @@
 }
 /* custom select styles */
 .select-area {
+    background: white;
+    color: #393939;
     border: 1px solid #99dcc7;
     position: relative;
     cursor: default;
@@ -53,6 +55,7 @@
     height: 28px;
     line-height: 18px;
     margin: 0;
+    font: 16px "open_sansregular", sans-serif;
 }
 #prod_currency .select-area{
     float: right;
@@ -87,6 +90,8 @@
     border-bottom: none;
     overflow: hidden;
     height: 1%;
+    font: 16px "open_sansregular", sans-serif;
+    color: #393939;
 }
 
 .select-options ul {

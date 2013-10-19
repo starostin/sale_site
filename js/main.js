@@ -324,12 +324,31 @@ var homeEvents = {
         $('.message').find('.close, #send_email').on('click', function(){
             $('.layout').hide();
         })
+    },
+    chooseLang: function(){
+        $('.lang').on('click', function(){
+            var self = $(this);
+            $('.choose_lang').toggle();
+            $('.choose_lang li').on('click', function(){
+                self.find('.lang_chosen').text($(this).text())
+            });
+        })
+    },
+    selectCurrency: function(parent){
+        var self = this,
+            parent = $(parent);
+        $('.options li').on('click', function(e){
+            e.preventDefault();
+            self.removeActiveClass(parent, 'options', 'active_option');
+            $(this).addClass('active_option')
+        })
     }
 };
-$(document).ready(function(){
-    homeEvents.loginPopup();
-    homeEvents.location();
-    homeEvents.locationPopup('#loc_popup', '#location_icon');
+//$(document).ready(function(){
+//    homeEvents.loginPopup();
+//    homeEvents.chooseLang();
+//    homeEvents.location();
+//    homeEvents.locationPopup('#loc_popup', '#location_icon');
 //    homeEvents.locationPopup(null, '#drop_books');
 //    homeEvents.locationPopup(null, '#drop_phones');
 //    homeEvents.locationPopup(null, '#drop_cameras');
@@ -339,10 +358,10 @@ $(document).ready(function(){
 //    homeEvents.locationPopup(null, '#drop_tvs');
 //    homeEvents.rangeSlyder();
 //    homeEvents.seeMore('see_more', 12);
-    homeEvents.addToFavorite();
-    homeEvents.showFavoritePopup();
-    homeEvents.changeTab();
-    homeEvents.showNumber();
-    homeEvents.sendEmail();
-    homeEvents.closeEmailWindow();
-});
+//    homeEvents.addToFavorite();
+//    homeEvents.showFavoritePopup();
+//    homeEvents.changeTab();
+//    homeEvents.showNumber();
+//    homeEvents.sendEmail();
+//    homeEvents.closeEmailWindow();
+//});

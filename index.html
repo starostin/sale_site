@@ -8,13 +8,26 @@
     <script src="js/jquery.js"></script>
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            homeEvents.loginPopup();
+            homeEvents.chooseLang();
+            homeEvents.location();
+            homeEvents.locationPopup('#loc_popup', '#location_icon');
+        });
+    </script>
 </head>
 <body>
 <div id="wrapper" class="with_bg_image">
     <header>
         <div id="head" class="align_container">
-            <img src="img/logo.png" alt="Logo" class="vert_align"/>
-            <p class="vert_align">EN <span>&#9662</span></p>
+            <a href="index.html"><img src="img/logo.png" alt="Logo" class="vert_align"/></a>
+            <div class="vert_align lang"> <span class="lang_chosen">EN</span><span class="lang_arrow">&#9662</span>
+                <ul class="choose_lang" style="display: none">
+                    <li>EN</li>
+                    <li>FR</li>
+                </ul>
+            </div>
             <div class="notifications vert_align" style="display: none">Notifications</div>
             <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
                 <div class="tip favorite_tip" style="display: none">
@@ -26,9 +39,11 @@
             <div id="login_link">
                 <span><a href="#">Log in</a> or </span>
                 <div class="user vert_align" style="display: none">Tom 68</div>
-                <div id="add_product_small" class="button red">
-                    <span>Add Product</span>
-                </div>
+                <a href="add_product.html">
+                    <div id="add_product_small" class="button red">
+                        <span>Add Product</span>
+                    </div>
+                </a>
                 <div class="tip login_tip" style="display: none">
                     <input type="text" placeholder="Username:"/>
                     <input type="text" placeholder="Password:"/>
@@ -45,10 +60,10 @@
     </header>
     <div id="after_header" class="align_container">
         <div class="align_container">
-            <p>Total active ads: 4 451 117 <span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
+            <p>Total active ads: <span class="bold_italic">4 451 117</span> <span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
             <label for="product_search">Find</label>
             <input type="text" id="product_search"/>
-            <label for="location_search">in</label>
+            <label for="location_search" class="normal_font">in</label>
             <input type="text" id="location_search" placeholder="My campus"/>
             <!--<input type="text" id="location_icon"/>-->
             <div id="location_icon"></div>
@@ -109,41 +124,55 @@
     <div id="container" class="align_container">
         <h1>Search inside the biggest student community</h1>
         <div id="categories">
-            <div id="book" class="blocks">
-                <p>Books</p>
-            </div>
-            <div id="mobile" class="blocks equals">
-                <p>Mobile</p>
-            </div>
-            <div id="tablets" class="blocks equals">
-                <p>Tablets</p>
-            </div>
-            <div id="laptops" class="blocks equals">
-                <p>Laptops</p>
-            </div>
-            <div id="camera" class="blocks equals">
-                <p>Camera</p>
-            </div>
-            <div id="bicycle" class="blocks equals">
-                <p>Bicycles</p>
-            </div>
-            <div id="tv" class="blocks equals">
-                <p>TV</p>
-            </div>
+            <a href="search_result.html">
+                <div id="book" class="blocks">
+                    <p>Books</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="mobile" class="blocks equals">
+                    <p>Mobile</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="tablets" class="blocks equals">
+                    <p>Tablets</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="laptops" class="blocks equals">
+                    <p>Laptops</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="camera" class="blocks equals">
+                    <p>Camera</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="bicycle" class="blocks equals">
+                    <p>Bicycles</p>
+                </div>
+            </a>
+            <a href="search_result.html">
+                <div id="tv" class="blocks equals">
+                    <p>TV</p>
+                </div>
+            </a>
         </div>
         <div id="product_way">
-            <div id="button" class="button">
+            <a href="add_product.html"><div id="button" class="button">
                 <div id="plus"><span>+</span></div>
                 <p>Add product</p>
-            </div>
+            </div></a>
         </div>
             <ul class="slyder goods" id="books">
                 <li></li>
-                <li id="iphone"><a href="#"><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
-                <li><a href="#"><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-                <li><a href="#"><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-                <li><a href="#"><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
-                <li><a href="#"><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li id="iphone"><a href="item_page.html"><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
+                <li><a href="item_page.html"><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li><a href="item_page.html"><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+                <li><a href="item_page.html"><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
+                <li><a href="item_page.html"><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
                 <li></li>
             </ul>
         <div id="university_slyder">

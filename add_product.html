@@ -3,6 +3,7 @@
 <head>
     <title>Add product</title>
     <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/default.css"/>
     <link rel="stylesheet" href="css/jcf_aqua.css"/>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
@@ -10,16 +11,25 @@
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jcf.js"></script>
     <script src="js/jcf.select.js"></script>
-    <!--<script src="js/jcf.file.js"></script>-->
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            homeEvents.chooseLang();
+        });
+    </script>
 </head>
 <body>
 <div id="wrapper">
-    <header>
+    <header class="with_opacity">
         <div id="head" class="align_container">
-            <img src="img/logo.png" alt="Logo" class="vert_align"/>
-            <p class="vert_align">EN <span>&#9662</span></p>
+            <a href="index.html"><img src="img/logo.png" alt="Logo" class="vert_align"/></a>
+            <div class="vert_align lang"> <span class="lang_chosen">EN</span><span class="lang_arrow">&#9662</span>
+                <ul class="choose_lang" style="display: none">
+                    <li>EN</li>
+                    <li>FR</li>
+                </ul>
+            </div>
             <div class="notifications vert_align" style="display: none">Notifications</div>
             <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
                 <div class="tip favorite_tip" style="display: none">
@@ -29,26 +39,12 @@
                 </div>
             </div>
             <div id="login_link">
-                <span><a href="#">Log in</a> or </span>
-                <div class="user vert_align" style="display: none">Tom 68</div>
-                <div id="add_product_small" class="button red">
-                    <span>Add Product</span>
-                </div>
-                <div class="tip login_tip" style="display: none">
-                    <input type="text" placeholder="Username:"/>
-                    <input type="text" placeholder="Password:"/>
-                    <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <div id="login">
-                        <div id="log_btn" class="button blue"><p>Login</p></div>
-                        <div id="reg"><a href="#">Registration</a></div>
-                    </div>
-                </div>
+                <p class="add_prod_label">Add product to iSalg</p>
             </div>
         </div>
     </header>
-    <div id="container" class="align_container prod_form">
+    <div class="line light" style="height: 9px"></div>
+    <div id="container" class="align_container prod_form smaller_opacity" style="padding: 0 15px">
         <div class="bottom_bord">
             <table>
                 <tr>
@@ -112,19 +108,19 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="input">
+                    <td class="input check">
                         <input type="checkbox" checked hidden id="used"><label for="used">Used</label>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="input">
+                    <td class="input check">
                         <input type="checkbox" checked hidden id="marked"><label for="marked">Marked</label>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="input">
+                    <td class="input check">
                         <input type="checkbox" checked hidden id="shipping"><label for="shipping">Shipping</label>
                     </td>
                 </tr>
@@ -139,7 +135,7 @@
                         <label>Price*</label>
                     </td>
                     <td class="input aqua align_left" id="prod_currency">
-                        <input type="text" id="price" class="prod_input" style="min-width: 100px; width: 100px;"/>
+                        <input type="text" id="price" class="prod_input" style="min-width: 100px; width: 100px;" placeholder="1030.99"/>
                         <select name="sort">
                             <option value="date">GPB</option>
                             <option value="price">DMP</option>
@@ -181,16 +177,16 @@
                 <tr>
                     <td class="file align_left" colspan="2">
                         <label>Mobile Number*</label>
-                        <input type="text" id="zip" class="prod_input" style="width: 72px; min-width: 72px"/>
-                        <input type="text" id="phone" class="prod_input" style="width: 180px; min-width: 180px"/>
+                        <input type="text" id="zip" class="prod_input" style="width: 72px; min-width: 72px" placeholder="X X X"/>
+                        <input type="text" id="phone" class="prod_input" style="width: 180px; min-width: 180px" placeholder="X X X X - X X X - X X"/>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="button blue" id="prod_submit">Submit</div>
+        <a href="verification_page.html"><div class="button blue" id="prod_submit">Submit</div></a>
     </div>
     <footer>
-        <div class="line"></div>
+        <div class="line light"></div>
         <div class="align_container">
             <ul class="footer_nav">
                 <li><a href="#">Contact Us</a></li>

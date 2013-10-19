@@ -3,6 +3,7 @@
 <head>
     <title>Search results</title>
     <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/default.css"/>
     <link rel="stylesheet" href="css/jcf.css"/>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css"/>
@@ -12,104 +13,133 @@
     <script src="js/jcf.select.js"></script>
     <script src="js/slyder.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            homeEvents.loginPopup();
+            homeEvents.chooseLang();
+            homeEvents.locationPopup('#loc_popup', '#location_icon');
+            homeEvents.locationPopup(null, '#drop_books');
+            homeEvents.locationPopup(null, '#drop_phones');
+            homeEvents.locationPopup(null, '#drop_cameras');
+            homeEvents.locationPopup(null, '#drop_laptops');
+            homeEvents.locationPopup(null, '#drop_tablets');
+            homeEvents.locationPopup(null, '#drop_bicycles');
+            homeEvents.locationPopup(null, '#drop_tvs');
+            homeEvents.rangeSlyder();
+            homeEvents.seeMore('see_more', 12);
+            homeEvents.addToFavorite();
+            homeEvents.showFavoritePopup();
+            homeEvents.changeTab();
+            homeEvents.showNumber();
+            homeEvents.sendEmail();
+            homeEvents.closeEmailWindow();
+        });
+    </script>
 </head>
 <body >
 <div id="wrapper">
-    <header>
-        <div id="head" class="align_container">
-            <img src="img/logo.png" alt="Logo" class="vert_align"/>
-            <p class="vert_align">EN <span>&#9662</span></p>
-            <div class="notifications vert_align" style="display: none">Notifications</div>
-            <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
-                <div class="tip favorite_tip" style="display: none">
-                    <img src="img/favorite_pic.jpg" alt="favorite"/>
-                    Prototyping A Practitioner’s Guide
-                    <p class="favor_price">$ 54.99</p>
-                </div>
+<header>
+    <div id="head" class="align_container">
+        <a href="index.html"><img src="img/logo.png" alt="Logo" class="vert_align"/></a>
+        <div class="vert_align lang"> <span class="lang_chosen">EN</span><span class="lang_arrow">&#9662</span>
+            <ul class="choose_lang" style="display: none">
+                <li>EN</li>
+                <li>FR</li>
+            </ul>
+        </div>
+        <div class="notifications vert_align" style="display: none">Notifications</div>
+        <div class="favorites vert_align" style="display: none"><span class="favor_click">Favorites</span> <span class="favor_numbers"></span>
+            <div class="tip favorite_tip" style="display: none">
+                <img src="img/favorite_pic.jpg" alt="favorite"/>
+                Prototyping A Practitioner’s Guide
+                <p class="favor_price">$ 54.99</p>
             </div>
-            <div id="login_link">
-                <span><a href="#">Log in</a> or </span>
-                <div class="user vert_align" style="display: none">Tom 68</div>
+        </div>
+        <div id="login_link">
+            <span><a href="#">Log in</a> or </span>
+            <div class="user vert_align" style="display: none">Tom 68</div>
+            <a href="add_product.html">
                 <div id="add_product_small" class="button red">
                     <span>Add Product</span>
                 </div>
-                <div class="tip login_tip" style="display: none">
-                    <input type="text" placeholder="Username:"/>
-                    <input type="text" placeholder="Password:"/>
-                    <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <div id="login">
-                        <div id="log_btn" class="button blue"><p>Login</p></div>
-                        <div id="reg"><a href="#">Registration</a></div>
-                    </div>
+            </a>
+            <div class="tip login_tip" style="display: none">
+                <input type="text" placeholder="Username:"/>
+                <input type="text" placeholder="Password:"/>
+                <div id="remember_me"><input type="checkbox" checked hidden id="rem_check"><label for="rem_check">Remember Me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div id="login">
+                    <div id="log_btn" class="button blue"><p>Login</p></div>
+                    <div id="reg"><a href="#">Registration</a></div>
                 </div>
             </div>
         </div>
-    </header>
-    <div id="after_header" class="align_container">
-        <div class="align_container">
-            <p>Total active ads: 4 451 117 <span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
-            <label for="product_search">Find</label>
-            <input type="text" id="product_search"/>
-            <label for="location_search">in</label>
-            <input type="text" id="location_search"placeholder="My campus"/>
-            <!--<input type="text" id="location_icon"/>-->
-            <div id="location_icon"></div>
-            <div class="modal_popup" style="display: none" id="loc_popup">
-                <div class="arrow-up"><div class="arrow-up-inside"></div></div>
-                <ul class="top_select">
-                    <li>Denmark</li>
-                    <li>Norway</li>
-                    <li>Switzerland</li>
-                    <li>United Kingdom</li>
-                    <li class="active">Everywhere</li>
-                </ul>
-                <ul class="main_list">
-                    <li>Region Kiev</li>
-                    <li>Region Kiev</li>
-                    <li>Region Kiev</li>
-                    <li>Region Kiev</li>
-                    <li>Region Kiev</li>
-                </ul>
-                <ul class="modal_navigation" style="display: none">
-                    <li class="region">Everywhere</li>
-                </ul>
-                <ul class="check_list" style="display: none">
-                    <li class="main_check_list">
-                        <ul>
-                            <li>
-                                <input type="checkbox" hidden id="1" />
-                                <label for="1">1Region Kiev</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" hidden id="2" />
-                                <label for="2">2Region Kiev</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" hidden id="3" />
-                                <label for="3">3Region Kiev</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" hidden id="4" />
-                                <label for="4">4Region Kiev</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" hidden id="5" />
-                                <label for="5">5Region Kiev</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" hidden id="6" />
-                                <label for="6">6Region Kiev</label>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div id="search_button" class="button blue"><img src="img/search.png" alt="search" class="vert_align"/></div>
-        </div>
     </div>
-    <div class="line"></div>
+</header>
+<div id="after_header" class="align_container item_page without_opacity">
+    <div class="align_container">
+        <p>Total active ads: <span class="bold_italic">4 451 117</span><span id="lacate_me">Locate me </span><img src="img/arrow.png" alt="arrow" id="arrow_for_search"/></p>
+        <label for="product_search">Find</label>
+        <input type="text" id="product_search"/>
+        <label for="location_search" class="normal_font">in</label>
+        <input type="text" id="location_search"placeholder="My campus"/>
+        <!--<input type="text" id="location_icon"/>-->
+        <div id="location_icon"></div>
+        <div class="modal_popup" style="display: none" id="loc_popup">
+            <div class="arrow-up"><div class="arrow-up-inside"></div></div>
+            <ul class="top_select">
+                <li>Denmark</li>
+                <li>Norway</li>
+                <li>Switzerland</li>
+                <li>United Kingdom</li>
+                <li class="active">Everywhere</li>
+            </ul>
+            <ul class="main_list">
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+                <li>Region Kiev</li>
+            </ul>
+            <ul class="modal_navigation" style="display: none">
+                <li class="region">Everywhere</li>
+            </ul>
+            <ul class="check_list" style="display: none">
+                <li class="main_check_list">
+                    <ul>
+                        <li>
+                            <input type="checkbox" hidden id="1" />
+                            <label for="1">1Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="2" />
+                            <label for="2">2Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="3" />
+                            <label for="3">3Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="4" />
+                            <label for="4">4Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="5" />
+                            <label for="5">5Region Kiev</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" hidden id="6" />
+                            <label for="6">6Region Kiev</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="search_button" class="button blue"><img src="img/search.png" alt="search" class="vert_align"/></div>
+    </div>
+</div>
+<div class="line light"></div>
     <div id="container" class="align_container">
         <ul class="categories_dropdowns">
             <li>Books<div class="small_arrow around_me" id="drop_books">˅</div>
@@ -246,23 +276,25 @@
                 </div>
             </li>
         </ul>
-        <ul class="options">
-            <li>Total: <span>28545</span></li>
-            <li class="genre">Category / Genre</li>
-            <li class="sort"><label for="sort">Sort:</label><select name="sort" id="sort" ><option value="date">by date</option><option value="price">by price</option></select></li>
-            <li class="sel"><a href="#">DKK</a></li>
-            <li class="sel"><a href="#">SEK</a></li>
-            <li class="sel"><a href="#">NOK</a></li>
-            <li class="sel"><a href="#">GPB</a></li>
-        </ul>
+        <div class="item_opt">
+            <ul class="options">
+                <li>Total: <span>28545</span></li>
+                <li class="genre">Category / Genre</li>
+                <li class="sort"><label for="sort" class="vert_align_center">Sort:</label><select name="sort" id="sort" ><option value="date">by date</option><option value="price">by price</option></select></li>
+                <li class="sel"><a href="#">DKK</a></li>
+                <li class="sel"><a href="#">SEK</a></li>
+                <li class="sel"><a href="#">NOK</a></li>
+                <li class="sel"><a href="#">GPB</a></li>
+            </ul>
+        </div>
         <h2 class="slyder_label">Featured items <span><a href="#">see all</span></a></h2>
         <ul class="slyder goods" id="books">
             <li></li>
-            <li id="iphone"><a><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
-            <li><a><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-            <li><a><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-            <li><a><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
-            <li><a><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li id="iphone"><a href="item_page.html"><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
+            <li><a href="item_page.html"><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li><a href="item_page.html"><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li><a href="item_page.html"><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
+            <li><a href="item_page.html"><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
             <li></li>
         </ul>
         <div class="common">
@@ -285,52 +317,54 @@
                 </div>
             </div>
             <ul class="goods all">
-                <li><a href="#"><img src="img/brown.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/biology.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition 1st Edition 1st Edition</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/3rd.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/4.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/5.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/6.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/7.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/8.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/9.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/10.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/11.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/12.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/13.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/14.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/15.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
-                <li><a href="#"><img src="img/books/16.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
-                <li style="display: none"><a href="#"><img src="img/books/4.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
-                <li style="display: none"><a href="#"><img src="img/books/5.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
-                <li style="display: none"><a href="#"><img src="img/books/6.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
-                <li style="display: none"><a href="#"><img src="img/books/7.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/brown.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/biology.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition 1st Edition 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/3rd.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/4.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/5.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/6.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/7.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/8.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/9.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/10.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/11.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/12.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/13.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/14.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/15.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
+                <li><a href="item_page.html"><img src="img/books/16.jpg" alt="iphone"/><p>Inferno  Robert Langdon 4 Dan Brown</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="item_page.html"><img src="img/books/4.jpg" alt="iphone"/><p>A Textbook of Biology (Class XI) 1st Edition</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="item_page.html"><img src="img/books/5.jpg" alt="iphone"/><p>Why We Fail Learning from Experience Design...</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="item_page.html"><img src="img/books/6.jpg" alt="iphone"/><p>The User Experience Team of One Leah Buley</p><p class="price">$200</p></a></li>
+                <li style="display: none"><a href="item_page.html"><img src="img/books/7.jpg" alt="iphone"/><p>Design For CareInnovating Healthcare Experience</p><p class="price">$200</p></a></li>
                 <li class="see_more"><span class="see">See More</span><span class="item_count"> 24 items</span></li>
 
             </ul>
         </div>
-        <ul class="options">
-            <li>Total: <span>28545</span></li>
-            <li class="genre">Category / Genre</li>
-            <li class="sort">Sort:<select name="sort" class="sort_select"><option value="date">by date</option><option value="price">by price</option></select></li>
-            <li class="sel"><a href="#">DKK</a></li>
-            <li class="sel"><a href="#">SEK</a></li>
-            <li class="sel"><a href="#">NOK</a></li>
-            <li class="sel"><a href="#">GPB</a></li>
-        </ul>
+        <div class="item_opt">
+            <ul class="options">
+                <li>Total: <span>28545</span></li>
+                <li class="genre">Category / Genre</li>
+                <li class="sort"><label for="sort" class="vert_align_center">Sort:</label><select name="sort" id="sort" ><option value="date">by date</option><option value="price">by price</option></select></li>
+                <li class="sel"><a href="#">DKK</a></li>
+                <li class="sel"><a href="#">SEK</a></li>
+                <li class="sel"><a href="#">NOK</a></li>
+                <li class="sel"><a href="#">GPB</a></li>
+            </ul>
+        </div>
         <h2 class="slyder_label">Customers also buy</h2>
         <ul class="slyder goods bottom" id="other">
             <li></li>
-            <li id="iphone"><a><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
-            <li><a><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-            <li><a><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
-            <li><a><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
-            <li><a><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li id="iphone"><a href="item_page.html"><img src="img/iphone.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB </p><p class="price">$649.69</p> </a></li>
+            <li><a href="item_page.html"><img src="img/brown.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Appl  iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li><a href="item_page.html"><img src="img/biology.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
+            <li><a href="item_page.html"><img src="img/galaxy.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p> </a></li>
+            <li><a href="item_page.html"><img src="img/ipad.jpg" alt="iphone"/><p>Brand New Factory Unlocked White Apple iPhone 5 16GB</p><p class="price">$649.69</p></a></li>
             <li></li>
         </ul>
     </div>
     <footer>
-        <div class="line"></div>
+        <div class="line light"></div>
         <div class="align_container">
             <ul class="footer_nav">
                 <li><a href="#">Contact Us</a></li>

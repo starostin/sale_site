@@ -18,6 +18,9 @@ header{
     background: white;
     width: 100%;
 }
+header.with_opacity{
+    background: rgba(255, 255, 255, 0.6);
+}
 .align_container{
     width: 980px;
     margin: auto;
@@ -58,14 +61,28 @@ header div#head{
     margin-right: 20px;
     text-decoration: underline;
 }
-header div#head>p{
+.lang{
+    position: relative;
     margin-left: 35px;
     font: 16px 'open_sanslight' sans-serif;
 }
-header div#head p span{
+.lang_arrow{
     margin-left: 10px;
     color: #818181;
-
+}
+.choose_lang{
+    position: absolute;
+    width: 30px;
+    background: #efefef;
+    border: 1px solid #37968d;
+    border-radius: 2px;
+    z-index: 20;
+    text-align: center;
+    left: 15px;
+}
+.choose_lang li:hover{
+    cursor: pointer;
+    background: #d1d0d0;
 }
 header #login_link{
     position: relative;
@@ -78,6 +95,12 @@ header #login_link{
 #login_link a{
     margin-right: 10px;
     color: #23aadc;
+}
+.add_prod_label{
+    font: 20px "open_sansregular", sans-serif;
+    color: #c43333;
+    margin-right: 18px;
+    margin-top: 11%;
 }
 .button{
     text-align: center;
@@ -109,6 +132,9 @@ header #login_link{
     height: 3px;
     background: #6fc4c9;
 }
+.line.light{
+    background: #cae2e7;
+}
 #add_product_small span{
     vertical-align: middle;
     font-size: 18px;
@@ -119,6 +145,9 @@ header #login_link{
     width: 100%;
     height: 95px;
     background-color: rgba(57, 166, 222, 0.7);
+}
+#after_header.without_opacity{
+    background: #95c6d0;
 }
 #after_header>div{
     position: relative;
@@ -136,6 +165,9 @@ header #login_link{
 label{
     font: 18px 'open_sansbold', sans-serif;
     color: white;
+}
+label.normal_font{
+    font-family: 'open_sansregular', sans-serif;
 }
 #after_header div p span{
     vertical-align: top;
@@ -193,6 +225,9 @@ input{
     padding-bottom: 58px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
+}
+#container.smaller_opacity{
+    background-color: rgba(255, 255, 255, 0.9);
 }
 #container>h1{
     padding-top: 48px;
@@ -458,7 +493,7 @@ li.right{
     top: 50px;
     left: -20px;
     color: #3e7290;
-    font-size: 16px;
+    font: 16px "Fjord One", serif;
     text-align: left;
 }
 .favorite_tip:before{
@@ -478,7 +513,7 @@ li.right{
     text-align: left;
     margin-top: 45px;
     margin-left: 14px;
-    font-size: 18px;
+    font: 18px "open_sanssemibold", sans-serif;
     color: #e36060;
 }
 .login_tip>input[type="text"]{
@@ -587,7 +622,7 @@ input[type="checkbox"]:checked + label:before {
 /*}*/
 div.arrow-up {
     top: -15px;
-    left: 796px;
+    left: 815px;
     position: absolute;
     width: 0;
     height: 0;
@@ -619,11 +654,9 @@ div.arrow-up-inside{
 .modal_popup ul.top_select {
     margin: auto;
     width: 940;
-    height: 20px;
-    margin-bottom:3px;
+    height: 28px;
     border-bottom: 1px solid #69c3ba;
     padding-bottom: 16px;
-    /*position: relative;*/
 }
 .top_select li {
     display: inline-block;
@@ -631,6 +664,7 @@ div.arrow-up-inside{
     padding: 5px;
     border-radius: 5px;
     font-size: 18px;
+    font-family: "open_sanslight", sans-serif;
     color: #174a60;
 }
 .top_select li.active {
@@ -648,7 +682,7 @@ div.arrow-up-inside{
 }
 .modal_navigation li {
     display: inline-block;
-    font: 12px sans-serif;
+    font: 12px "open_sansregular", sans-serif;
     color: #468bc1;
 }
 .modal_navigation li:after {
@@ -660,16 +694,17 @@ div.arrow-up-inside{
 .main_check_list, .main_list {
     height: 60%;
     float: left;
-    margin-right: 30px;
+    margin-right: 90px;
     margin-left: 0;
-    border-left: 1px dashed black;
-    padding-left: 5px;
+    border-left: 1px dashed #e1e1e1;
+    padding-left: 15px;
 }
 .main_list{
     padding-right: 35px;
     border-right: 1px dashed #e1e1e1;
     border-left: none;
-    height: 80%;
+    height: 74%;
+    margin-top: 10px;
     margin-left: 10px;
 }
 .main_check_list:first-child, .main_list:first-child{
@@ -680,7 +715,10 @@ div.arrow-up-inside{
     cursor: pointer;
     margin-top: 18px;
     color: #484747;
-    font: 14px sans-serif;
+    font: 14px "open_sansregular", sans-serif;
+}
+.main_check_list li:first-child, .main_list li:first-child{
+    margin-top: 0;
 }
 .main_check_list label{
     cursor: pointer;
@@ -696,7 +734,7 @@ div.arrow-up-inside{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 6px;
-    font-size: 18px;
+    font: 18px "Fjord One", serif;
     color: #217485;
     position: relative;
 }
@@ -718,6 +756,8 @@ div.arrow-up-inside{
     width: 30px;
     float: right;
     border-left: 1px dashed #9cc7d0;
+    font-family: sans-serif;
+    font-weight: 300;
 }
 .categories_dropdowns .active_ctegory{
     background-color: #3cb1c9;
@@ -734,18 +774,23 @@ div.arrow-up-inside{
 }
 .options li{
     display: inline-block;
-    font-family: sans-serif;
-    font-size: 16px;
+    font: 16px "open_sanslight", sans-serif;
+}
+.options .active_option{
+    font-family: "open_sansbold", sans-serif;
+}
+.active_option a{
+    text-decoration: none;
 }
 .options li:first-child{
     color: #838485;
     margin-left: 24px;
 }
 .options li:first-child span{
-    font-weight: bold;
+    font-family: "open_sansbold", sans-serif;
 }
 .options .genre{
-    font-size: 14px;
+    font: 14px "open_sansregular", sans-serif;
     color: #468bc1;
     margin-left: 170px;
 }
@@ -755,7 +800,7 @@ div.arrow-up-inside{
 }
 .sort label{
     color: #838485;
-    font-size: 16px;
+    font: 16px "open_sanslight", sans-serif;
 }
 .options .sel{
     margin-right: 10px;
@@ -781,6 +826,7 @@ div.arrow-up-inside{
     display: table-cell;
     width: 250px;
     vertical-align: top;
+    font-family: "open_sansregular", sans-serif;
 }
 .all{
     display: table-cell;
@@ -797,7 +843,7 @@ div.arrow-up-inside{
     background: #e8f2f4;
     margin-top: 30px;
     border-radius: 3px;
-    font-size: 30px;
+    font: 30px "open_sanslight", sans-serif;
 }
 .see{
     color: #7cc0ce;
@@ -809,7 +855,6 @@ div.arrow-up-inside{
     text-align: left;
     margin-bottom: 14px;
     margin-left: 10px;
-    font-family: sans-serif;
     font-size: 16px;
 }
 .price_label{
@@ -820,7 +865,7 @@ div.arrow-up-inside{
     font-size: 12px;
 }
 #amount span.price{
-    font-size: 16px;
+    font: 16px "open_sansbold", sans-serif;
     color: #565e62;
     font-weight: bold;
 }
@@ -829,7 +874,7 @@ div.arrow-up-inside{
     text-align: left;
 }
 #amount>span:last-child{
-    margin-left: 120px;
+    float: right;
 }
 .set_check{
     text-align: left;
@@ -838,7 +883,7 @@ div.arrow-up-inside{
 }
 .set_check label{
     color: #69746e;
-    font-size: 16px;
+    font: 16px "open_sansregular", sans-serif;
 }
 .categories_dropdowns .modal_popup{
     left: 18px;
@@ -864,6 +909,7 @@ div.arrow-up-inside{
     border-left: 1px dashed #9ce2ea;
     border-right: 1px dashed #9ce2ea;
     color: #3f6fd0;
+    font-family: "open_sansregular", sans-serif;
     font-size: 14px;
 }
 .item_label{
@@ -884,8 +930,10 @@ div.arrow-up-inside{
 }
 .add_to_favorite{
     cursor: pointer;
+    float: right;
     vertical-align: middle;
-    margin-left: 400px;
+    margin-top: 3%;
+    margin-right: 20px;
 }
 .item_info{
     line-height: 20px;
@@ -897,15 +945,15 @@ div.arrow-up-inside{
     padding: 3px 0;
 }
 .item_info p{
-    font-size: 14px;
+    font: 14px "open_sansitalic", sans-serif;
     color: #c0c0c0;
-    font-style: italic;
     vertical-align: middle;
     display: inline-block;
     margin-left: 16px;
 }
 .item_info>p:last-child{
-    margin-left: 436px;
+    float: right;
+    margin-right: 10px;
 }
 div.small-arrow-up {
     top: -9px;
@@ -938,7 +986,7 @@ div.small-arrow-up-inside{
 }
 .sald_id{
     color: #959595;
-    font-size: 12px;
+    font: 12px "open_sansregular", sans-serif;
 }
 .item_desc>p{
     margin-left: 22px;
@@ -978,6 +1026,7 @@ div.small-arrow-up-inside{
     display: inline-block;
     padding: 8px 20px;
     color: #484848;
+    font: 16px "Fjord One", serif;
 }
 .tab_selected{
     position: relative;
@@ -990,7 +1039,7 @@ div.small-arrow-up-inside{
     padding-top: 18px;
     padding-right: 10px;
     color: #828282;
-    font-size: 14px;
+    font: 14px, "open_sansregular", sans-serif;
 }
 .seller_desc{
     font-family: sans-serif;
@@ -1006,7 +1055,7 @@ div.small-arrow-up-inside{
     margin-top: 0;
 }
 .big_price{
-    font-size: 36px;
+    font: 36px "open_sanssemibold", sans-serif;
     color: #e36060;
     text-align: center;
     margin-bottom: 35px;
@@ -1030,22 +1079,21 @@ div.small-arrow-up-inside{
 .seller_name{
     text-align: left;
     margin-left: 10px;
+    font: 12px "open_sanslight", sans-serif;
 }
 .seller_name>p:first-child{
+    font: 22px "open_sansregular", sans-serif;
     margin-top: 0;
     color: #403e3e;
-    font-size: 22px;
 }
 .seller_name>p{
     margin-top: 12px;
 }
 .small_gray{
-    font-size: 12px;
     color: #888888;
 }
 .small_link{
     color: #3f6fd0;
-    font-size: 12px;
 }
 .seller_contact{
     text-align: center;
@@ -1062,6 +1110,7 @@ div.small-arrow-up-inside{
     margin-bottom: 26px;
     margin-left: 35px;
     color: #0e6998;
+    font: 24px "open_sansregular", sans-serif;
 }
 .phone_number{
     height: 35px;
@@ -1072,7 +1121,7 @@ div.small-arrow-up-inside{
     margin-bottom: 26px;
     text-align: center;
     color: #0e6998;
-    font-size: 24px;
+    font: 24px "open_sansregular", sans-serif;
 }
 #seller_email{
     display: inline-block;
@@ -1080,15 +1129,22 @@ div.small-arrow-up-inside{
     line-height: 36px;
     width: 254px;
     font-size: 18px;
-    text-align: left;
     margin-bottom: 26px;
+    font-family: "open_sansregular", sans-serif;
 }
 #seller_email p{
-    margin-left: 26px;
+    display: inline-block;
+    vertical-align: middle;
 }
-#seller_email span{
-    font-size: 36px;
+#seller_email p:first-child{
+    margin-left: -10px;
+}
+#seller_email .btn_pic{
+    font-size: 30px;
     margin-right: 44px;
+}
+#seller_email .btn_text{
+    font-size: 18px;
 }
 .other{
     display: table;
@@ -1102,7 +1158,7 @@ div.small-arrow-up-inside{
     width: 50%;
     padding-left: 28px;
     color: #0e6998;
-    font-size: 18px;
+    font: 18px "open_sansregular", sans-serif;
 }
 .print{
     border-right: 1px dashed #e1e1e1;
@@ -1135,6 +1191,7 @@ div.small-arrow-up-inside{
     vertical-align: middle;
     border-radius: 6px;
     width: 554px;
+    font-family: "open_sansregular", sans-serif;
  }
 .message_header{
     height: 44px;
@@ -1151,7 +1208,7 @@ div.small-arrow-up-inside{
 }
 .close{
     cursor: pointer;
-    margin-left: 110px;
+    margin-left: 100px;
 }
 .message_container{
     margin: 8px 18px 18px 18px;
@@ -1184,10 +1241,14 @@ div.small-arrow-up-inside{
     margin-left: 0;
     margin-right: 0;
 }
-.email::-webkit-input-placeholder {
+.email::-webkit-input-placeholder, #message::-webkit-input-placeholder {
     font-size: 14px;
-    font-style: italic;
+    font-family: "open_sansitalic", sans-serif;
     color: #c7c7c7;
+}
+#message::-webkit-input-placeholder{
+    padding-top: 5px;
+    padding-left: 5px;
 }
 #send_email{
     display: inline-block;
@@ -1195,6 +1256,7 @@ div.small-arrow-up-inside{
     height: 40px;
     line-height: 40px;
     vertical-align: top;
+    font-family: "open_sansregular", sans-serif;
 }
 .prod_form input{
     box-sizing: border-box;
@@ -1209,19 +1271,22 @@ td{
     text-align: right;
 }
 td label{
-    color: black;
+    color: #6d6d6d;
+    font: 14px "open_sansitalic", sans-serif;
     padding-right: 10px;
+}
+td.check label{
+    font: 16px "open_sansregular", sans-serif;
 }
 td input{
     min-width: 200px;
     margin: 0;
+    padding: 5px 0 5px 5px;
+    font: 16px "open_sansregular", sans-serif;
 }
 .bottom_bord{
-    border-bottom: 1px solid black;
+    border-bottom: 1px dashed #e1e1e1;
     padding-bottom: 20px;
-}
-.input_not_in_table label{
-    color: black;
 }
 .prod_title input{
     width: 500px;
@@ -1239,6 +1304,15 @@ textarea {
 .input{
     text-align: left;
     width: 55%;
+}
+#price, #price::-webkit-input-placeholder{
+    color: #e36060;
+    font: 16px "open_sansbold", sans-serif;
+    text-align: center;
+}
+#zip::-webkit-input-placeholder, #phone::-webkit-input-placeholder{
+    color: #c2c2c2;
+    text-align: center;
 }
 .align_left{
     padding-right: 32.7%;
@@ -1292,4 +1366,30 @@ textarea {
 }
 .full_width{
     width: 100%;
+}
+.clear:before, .clear:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clear:after {
+    clear: both;
+}
+.explantation{
+    width: 100%;
+    border-bottom: 1px dashed #e1e1e1;
+    margin-bottom: 54px;
+}
+.inside{
+    width: 50%;
+    margin: auto;
+    padding-top: 26px;
+    padding-bottom: 32px;
+    color: #22ac8d;
+    font: 18px "open_sanslight_italic", sans-serif;
+}
+.explantation img{
+    float: left;
 }
