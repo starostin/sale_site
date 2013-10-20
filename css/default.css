@@ -1393,3 +1393,11 @@ textarea {
 .explantation img{
     float: left;
 }
+.letters_count{
+    position: relative;
+}
+.letters_count .letters{
+    position: absolute;
+    font: 12px "open_sansitalic", sans-serif;
+    color: #9ac4da;
+}

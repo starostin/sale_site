@@ -342,6 +342,12 @@ var homeEvents = {
             self.removeActiveClass(parent, 'options', 'active_option');
             $(this).addClass('active_option')
         })
+    },
+    checkLettersCount: function(el, lettersContainer){
+        var maxLength = $(el).attr('maxlength');
+        $(el).on('keyup', function () {
+            $(lettersContainer).text(maxLength - $(this).val().length)
+        })
     }
 };
 //$(document).ready(function(){

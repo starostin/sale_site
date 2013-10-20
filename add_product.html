@@ -16,6 +16,8 @@
     <script type="text/javascript">
         $(document).ready(function(){
             homeEvents.chooseLang();
+            homeEvents.checkLettersCount('#title', '#for_title');
+            homeEvents.checkLettersCount('#desc', '#for_desc');
         });
     </script>
 </head>
@@ -70,9 +72,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="horiz_align_center" colspan="2">
+                    <td class="horiz_align_center letters_count" colspan="2">
                         <label for="title">Title*</label>
-                        <input type="text" id="title" class="prod_input" style="width: 485px; height: 35px"/>
+                        <input type="text" id="title" class="prod_input" style="width: 485px; height: 35px" maxlength="20"/>
+                        <span class="letters" style="top: 55px; left: 280px;"><span id="for_title">20</span> signs left</span>
                     </td>
                 </tr>
             </table>
@@ -125,9 +128,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="horiz_align_center" style="padding-right: 60px;">
+                    <td colspan="2" class="horiz_align_center letters_count" style="padding-right: 60px;">
                         <label for="desc" class="vert_align_top">Description* </label>
-                        <textarea name="desc" id="desc" rows="5" style="width: 485px"></textarea>
+                        <textarea name="desc" id="desc" rows="5" style="width: 485px" maxlength="180"></textarea>
+                        <span class="letters" style="top: 110px; left: 270px;"><span id="for_desc">180</span> signs left</span>
                     </td>
                 </tr>
                 <tr>
@@ -175,10 +179,12 @@
         <div class="bottom_bord">
             <table>
                 <tr>
-                    <td class="file align_left" colspan="2">
+                    <td class="file align_left letters_count" colspan="2">
                         <label>Mobile Number*</label>
                         <input type="text" id="zip" class="prod_input" style="width: 72px; min-width: 72px" placeholder="X X X"/>
+                        <span class="letters" style="top: 0px; left: 405px;">Country code</span>
                         <input type="text" id="phone" class="prod_input" style="width: 180px; min-width: 180px" placeholder="X X X X - X X X - X X"/>
+                        <span class="letters" style="top: 0px; left: 535px;">Phone number</span>
                     </td>
                 </tr>
             </table>
