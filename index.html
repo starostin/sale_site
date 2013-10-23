@@ -15,6 +15,19 @@
             homeEvents.chooseLang();
             homeEvents.location();
             homeEvents.locationPopup('#loc_popup', '#location_icon');
+            $('#after_header').blurjs({
+                source: '#wrapper',
+                radius: 7,
+                overlay: 'rgba(57, 166, 222, 0.7)'
+            });
+            $('#blur').blurjs({
+                source: '#wrapper',
+                radius: 7,
+                overlay: 'rgba(255, 255, 255, 0.7)',offset: {
+                    x: 0,
+                    y: -400
+                }
+            });
         });
     </script>
 </head>
@@ -123,6 +136,7 @@
     </div>
     <div class="line"></div>
     <div id="container" class="align_container">
+        <div id="blur">
         <h1>Search inside the biggest student community</h1>
         <div id="categories">
             <a href="search_result.html">
@@ -166,6 +180,7 @@
                 <div id="plus"><span>+</span></div>
                 <p>Add product</p>
             </div></a>
+        </div>
         </div>
             <ul class="slyder goods" id="books">
                 <li></li>
